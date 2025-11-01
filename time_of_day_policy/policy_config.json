@@ -1,0 +1,180 @@
+{
+  "query_types": {
+    "critical": {
+      "description": "Emergency and security-related queries",
+      "time_restriction": "none",
+      "always_allowed": true,
+      "examples": [
+        "Emergency system status check",
+        "Security alert",
+        "System failure notification"
+      ]
+    },
+    "admin": {
+      "description": "Administrative and maintenance queries",
+      "time_restriction": "extended_hours",
+      "working_hours": {
+        "start": "08:00",
+        "end": "20:00",
+        "description": "Extended working hours for admin tasks"
+      },
+      "examples": [
+        "Admin system maintenance",
+        "Database backup",
+        "User management"
+      ]
+    },
+    "non-critical": {
+      "description": "General information and entertainment queries",
+      "time_restriction": "standard_hours",
+      "working_hours": {
+        "start": "08:00",
+        "end": "17:00",
+        "description": "Modified working hours (8 AM to 5 PM)"
+      },
+      "examples": [
+        "Summarize today's news",
+        "General information request",
+        "Entertainment content"
+      ]
+    },
+    "research": {
+      "description": "Research and analysis queries",
+      "time_restriction": "research_hours",
+      "working_hours": {
+        "start": "07:00",
+        "end": "22:00",
+        "description": "Extended hours for research activities"
+      },
+      "examples": [
+        "Data analysis request",
+        "Research summary",
+        "Trend analysis"
+      ]
+    },
+    "weekend": {
+      "description": "Weekend-only queries",
+      "time_restriction": "weekend_hours",
+      "working_hours": {
+        "start": "10:00",
+        "end": "16:00",
+        "description": "Weekend hours only"
+      },
+      "examples": [
+        "Weekend entertainment",
+        "Leisure activities",
+        "Personal projects"
+      ]
+    }
+  },
+  "test_scenarios": [
+    {
+      "query_type": "critical",
+      "test_time": "10:00",
+      "description": "Emergency system status check"
+    },
+    {
+      "query_type": "critical",
+      "test_time": "23:00",
+      "description": "Security alert"
+    },
+    {
+      "query_type": "critical",
+      "test_time": "03:00",
+      "description": "Night emergency response"
+    },
+    {
+      "query_type": "non-critical",
+      "test_time": "10:00",
+      "description": "Summarize today's news"
+    },
+    {
+      "query_type": "non-critical",
+      "test_time": "08:00",
+      "description": "Summarize today's news (before hours)"
+    },
+    {
+      "query_type": "non-critical",
+      "test_time": "19:00",
+      "description": "Summarize today's news (after hours)"
+    },
+    {
+      "query_type": "non-critical",
+      "test_time": "14:30",
+      "description": "General information request"
+    },
+    {
+      "query_type": "admin",
+      "test_time": "09:00",
+      "description": "Admin system maintenance"
+    },
+    {
+      "query_type": "admin",
+      "test_time": "07:00",
+      "description": "Early admin access"
+    },
+    {
+      "query_type": "admin",
+      "test_time": "21:00",
+      "description": "Late admin access"
+    },
+    {
+      "query_type": "research",
+      "test_time": "06:00",
+      "description": "Early morning research"
+    },
+    {
+      "query_type": "research",
+      "test_time": "20:00",
+      "description": "Evening research session"
+    },
+    {
+      "query_type": "critical",
+      "test_time": "05:00",
+      "description": "Early morning emergency"
+    },
+    {
+      "query_type": "non-critical",
+      "test_time": "12:00",
+      "description": "Lunch time information request"
+    },
+    {
+      "query_type": "admin",
+      "test_time": "22:00",
+      "description": "Late night admin task"
+    },
+    {
+      "query_type": "research",
+      "test_time": "23:00",
+      "description": "Late night research"
+    },
+    {
+      "query_type": "weekend",
+      "test_time": "11:00",
+      "description": "Weekend morning activity"
+    },
+    {
+      "query_type": "weekend",
+      "test_time": "15:00",
+      "description": "Weekend afternoon activity"
+    },
+    {
+      "query_type": "weekend",
+      "test_time": "20:00",
+      "description": "Weekend evening activity (should be denied)"
+    }
+  ],
+  "policy_rules": [
+    "Critical queries are always allowed regardless of time.",
+    "Non-critical queries are allowed only during working hours (09:00 to 18:00).",
+    "Admin queries are allowed during extended hours (08:00 to 20:00).",
+    "Research queries are allowed during research hours (07:00 to 22:00).",
+    "Working hours are defined as 9 AM to 6 PM Monday through Friday.",
+    "Non-critical queries include general information requests and summaries.",
+    "Critical queries include emergency information and security-related requests.",
+    "Admin queries include system maintenance and administrative tasks.",
+    "Research queries include data analysis and research activities.",
+    "Weekend queries are allowed only during weekend hours (10:00 to 16:00).",
+    "Query types can be classified as critical, admin, non-critical, research, or weekend."
+  ]
+} 

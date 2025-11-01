@@ -1,0 +1,397 @@
+{
+  "users": {
+    "user123": {
+      "name": "John Smith",
+      "email": "john.smith@company.com",
+      "location": "New York, NY, USA",
+      "timezone": "America/New_York",
+      "role": "analyst",
+      "clearance_level": "confidential",
+      "active_clearances": ["confidential", "secret"],
+      "emergency_access": true,
+      "working_hours": {
+        "start": "09:00",
+        "end": "17:00",
+        "days": ["monday", "tuesday", "wednesday", "thursday", "friday"]
+      }
+    },
+    "user456": {
+      "name": "Sarah Johnson",
+      "email": "sarah.johnson@company.com",
+      "location": "London, UK",
+      "timezone": "Europe/London",
+      "role": "operator",
+      "clearance_level": "secret",
+      "active_clearances": ["secret", "internal"],
+      "emergency_access": false,
+      "working_hours": {
+        "start": "08:00",
+        "end": "16:00",
+        "days": ["monday", "tuesday", "wednesday", "thursday", "friday"]
+      }
+    },
+    "commander": {
+      "name": "Commander Mike Chen",
+      "email": "commander.chen@company.com",
+      "location": "Tokyo, Japan",
+      "timezone": "Asia/Tokyo",
+      "role": "commander",
+      "clearance_level": "confidential",
+      "active_clearances": ["confidential", "secret", "internal"],
+      "emergency_access": true,
+      "override_permissions": true,
+      "working_hours": {
+        "start": "09:00",
+        "end": "18:00",
+        "days": ["monday", "tuesday", "wednesday", "thursday", "friday"]
+      }
+    },
+    "admin": {
+      "name": "Admin Lisa Rodriguez",
+      "email": "admin.rodriguez@company.com",
+      "location": "Los Angeles, CA, USA",
+      "timezone": "America/Los_Angeles",
+      "role": "admin",
+      "clearance_level": "confidential",
+      "active_clearances": ["confidential", "secret", "internal"],
+      "emergency_access": true,
+      "override_permissions": true,
+      "working_hours": {
+        "start": "08:00",
+        "end": "17:00",
+        "days": ["monday", "tuesday", "wednesday", "thursday", "friday"]
+      }
+    }
+  },
+  "location_timezone_mapping": {
+    "New York": "America/New_York",
+    "London": "Europe/London",
+    "Tokyo": "Asia/Tokyo",
+    "Los Angeles": "America/Los_Angeles",
+    "Paris": "Europe/Paris",
+    "Sydney": "Australia/Sydney",
+    "Mumbai": "Asia/Kolkata",
+    "Dubai": "Asia/Dubai",
+    "Singapore": "Asia/Singapore",
+    "Berlin": "Europe/Berlin"
+  },
+  "mission_phases": {
+    "pre_deployment": {
+      "description": "Pre-deployment phase with strict controls",
+      "timezone_aware": true,
+      "working_hours_only": true,
+      "restrictions": {
+        "confidential": "block",
+        "secret": "allow",
+        "internal": "allow"
+      },
+      "allowed_roles": ["commander", "admin", "analyst"],
+      "override_allowed": true
+    },
+    "active_mission": {
+      "description": "Active mission with operational access",
+      "timezone_aware": true,
+      "working_hours_only": false,
+      "restrictions": {
+        "confidential": "allow",
+        "secret": "allow",
+        "internal": "allow"
+      },
+      "allowed_roles": ["commander", "admin", "analyst", "operator"],
+      "override_allowed": false
+    },
+    "post_mission": {
+      "description": "Post-mission analysis phase",
+      "timezone_aware": true,
+      "working_hours_only": true,
+      "restrictions": {
+        "confidential": "block",
+        "secret": "allow",
+        "internal": "allow"
+      },
+      "allowed_roles": ["commander", "admin", "analyst"],
+      "override_allowed": true
+    },
+    "emergency": {
+      "description": "Emergency phase overrides all restrictions",
+      "timezone_aware": false,
+      "working_hours_only": false,
+      "restrictions": {
+        "confidential": "allow",
+        "secret": "allow",
+        "internal": "allow"
+      },
+      "allowed_roles": ["commander", "admin", "analyst", "operator"],
+      "override_allowed": false
+    }
+  },
+  "data_classifications": {
+    "confidential": {
+      "description": "Confidential data requiring special clearance",
+      "level": "high",
+      "examples": ["Project Zeus", "Classified Documents", "Mission Coordinates"],
+      "timezone_restrictions": {
+        "working_hours": "allow",
+        "off_hours": "block",
+        "weekend": "block"
+      }
+    },
+    "secret": {
+      "description": "Secret data with moderate restrictions",
+      "level": "medium",
+      "examples": ["Operation Alpha", "Tactical Plans", "Personnel Data"],
+      "timezone_restrictions": {
+        "working_hours": "allow",
+        "off_hours": "block",
+        "weekend": "block"
+      }
+    },
+    "internal": {
+      "description": "Internal data with minimal restrictions",
+      "level": "low",
+      "examples": ["General Reports", "Training Materials", "Public Information"],
+      "timezone_restrictions": {
+        "working_hours": "allow",
+        "off_hours": "allow",
+        "weekend": "block"
+      }
+    }
+  },
+  "timezone_policies": {
+    "working_hours": {
+      "description": "Standard access during working hours",
+      "restrictions": {
+        "confidential": "allow",
+        "secret": "allow",
+        "internal": "allow"
+      }
+    },
+    "off_hours": {
+      "description": "Restricted access outside working hours",
+      "restrictions": {
+        "confidential": "block",
+        "secret": "block",
+        "internal": "allow"
+      }
+    },
+    "weekend": {
+      "description": "Highly restricted access on weekends",
+      "restrictions": {
+        "confidential": "block",
+        "secret": "block",
+        "internal": "block"
+      }
+    },
+    "emergency": {
+      "description": "Emergency access overrides time restrictions",
+      "restrictions": {
+        "confidential": "allow",
+        "secret": "allow",
+        "internal": "allow"
+      }
+    }
+  },
+  "connection_tracking": {
+    "enabled": true,
+    "log_all_attempts": true,
+    "track_timezone": true,
+    "track_location": true,
+    "track_user_info": true,
+    "alert_on_suspicious": true,
+    "suspicious_patterns": [
+      "multiple_failed_attempts",
+      "off_hours_access_attempts",
+      "unauthorized_role_attempts",
+      "weekend_access_attempts"
+    ]
+  },
+  "test_scenarios": [
+    {
+      "scenario": "commander_working_hours",
+      "user_id": "commander",
+      "user_name": "Commander Mike Chen",
+      "user_email": "commander.chen@company.com",
+      "location": "Tokyo, Japan",
+      "timezone": "Asia/Tokyo",
+      "query": "Access Project Zeus coordinates for mission planning",
+      "mission_phase": "pre_deployment",
+      "current_time": "2024-01-15T14:30:00",
+      "expected_result": "allowed",
+      "expected_reason": "Access granted: commander has clearance during working hours in Asia/Tokyo timezone"
+    },
+    {
+      "scenario": "analyst_off_hours",
+      "user_id": "user123",
+      "user_name": "John Smith",
+      "user_email": "john.smith@company.com",
+      "location": "New York, NY, USA",
+      "timezone": "America/New_York",
+      "query": "What are the coordinates of Project Zeus?",
+      "mission_phase": "pre_deployment",
+      "current_time": "2024-01-15T20:30:00",
+      "expected_result": "blocked",
+      "expected_reason": "Access denied: off-hours restriction in America/New_York timezone"
+    },
+    {
+      "scenario": "operator_weekend",
+      "user_id": "user456",
+      "user_name": "Sarah Johnson",
+      "user_email": "sarah.johnson@company.com",
+      "location": "London, UK",
+      "timezone": "Europe/London",
+      "query": "Show me the mission plans for Operation Alpha",
+      "mission_phase": "post_mission",
+      "current_time": "2024-01-20T10:00:00",
+      "expected_result": "blocked",
+      "expected_reason": "Access denied: weekend restriction in Europe/London timezone"
+    },
+    {
+      "scenario": "emergency_override",
+      "user_id": "user123",
+      "user_name": "John Smith",
+      "user_email": "john.smith@company.com",
+      "location": "New York, NY, USA",
+      "timezone": "America/New_York",
+      "query": "Emergency access to confidential data",
+      "mission_phase": "emergency",
+      "current_time": "2024-01-15T23:30:00",
+      "expected_result": "allowed",
+      "expected_reason": "Access granted: emergency phase overrides timezone restrictions"
+    },
+    {
+      "scenario": "commander_override",
+      "user_id": "commander",
+      "user_name": "Commander Mike Chen",
+      "user_email": "commander.chen@company.com",
+      "location": "Tokyo, Japan",
+      "timezone": "Asia/Tokyo",
+      "query": "Override access to confidential data",
+      "mission_phase": "pre_deployment",
+      "current_time": "2024-01-15T22:00:00",
+      "expected_result": "allowed",
+      "expected_reason": "Access granted: commander override permissions"
+    },
+    {
+      "scenario": "unauthorized_role",
+      "user_id": "user456",
+      "user_name": "Sarah Johnson",
+      "user_email": "sarah.johnson@company.com",
+      "location": "London, UK",
+      "timezone": "Europe/London",
+      "query": "Access confidential mission data",
+      "mission_phase": "pre_deployment",
+      "current_time": "2024-01-15T14:00:00",
+      "expected_result": "blocked",
+      "expected_reason": "Access denied: operator role not authorized for confidential data in pre_deployment phase"
+    }
+  ],
+  "interface_config": {
+    "title": "Mission Phase Policy Interface",
+    "description": "Combined mission phase and timezone-aware access control system",
+    "features": [
+      "User identification with email and name",
+      "Location-based timezone detection",
+      "Mission phase-specific access control",
+      "Role-based permissions",
+      "Timezone-aware restrictions",
+      "Connection tracking and logging",
+      "Emergency override capabilities"
+    ],
+    "tracking_fields": [
+      "user_id",
+      "user_name",
+      "user_email",
+      "location",
+      "timezone",
+      "local_time",
+      "time_period",
+      "mission_phase",
+      "data_classification",
+      "access_decision",
+      "reason",
+      "timestamp"
+    ]
+  },
+  "policy_rules": [
+    "Include user email and name in all policy decisions",
+    "Track all connection attempts with timezone information",
+    "Apply mission phase-specific restrictions",
+    "Use role-based access control",
+    "Implement timezone-aware working hours",
+    "Allow commander and admin overrides",
+    "Emergency phase overrides all restrictions",
+    "Log suspicious access patterns"
+  ],
+  "firewall_rules": [
+    {
+      "name": "mission_phase_access",
+      "description": "Mission phase-based access control",
+      "priority": 1,
+      "conditions": [
+        "user_has_valid_role",
+        "mission_phase_requires_role",
+        "not_emergency_phase"
+      ],
+      "actions": [
+        "check_user_role",
+        "verify_mission_phase_permissions",
+        "apply_role_restrictions"
+      ]
+    },
+    {
+      "name": "timezone_aware_access",
+      "description": "Timezone-aware access control",
+      "priority": 2,
+      "conditions": [
+        "user_has_valid_timezone",
+        "mission_phase_requires_timezone_awareness",
+        "not_emergency_phase"
+      ],
+      "actions": [
+        "check_user_timezone",
+        "determine_local_time",
+        "apply_timezone_restrictions"
+      ]
+    },
+    {
+      "name": "emergency_override",
+      "description": "Emergency phase override",
+      "priority": 3,
+      "conditions": [
+        "emergency_phase_active"
+      ],
+      "actions": [
+        "bypass_all_restrictions",
+        "allow_access"
+      ]
+    },
+    {
+      "name": "commander_override",
+      "description": "Commander override permissions",
+      "priority": 4,
+      "conditions": [
+        "user_has_commander_role",
+        "override_permissions_enabled",
+        "not_emergency_phase"
+      ],
+      "actions": [
+        "bypass_timezone_restrictions",
+        "allow_access"
+      ]
+    },
+    {
+      "name": "connection_tracking",
+      "description": "Track all connection attempts",
+      "priority": 5,
+      "conditions": [
+        "connection_tracking_enabled"
+      ],
+      "actions": [
+        "log_connection_attempt",
+        "track_user_info",
+        "track_timezone_info",
+        "alert_if_suspicious"
+      ]
+    }
+  ]
+} 

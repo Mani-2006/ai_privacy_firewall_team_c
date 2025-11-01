@@ -1,0 +1,140 @@
+2025-09-16 01:15:17 - multi_factor_contradiction_policy - INFO - Starting Multi-Factor Contradiction Policy demonstration
+2025-09-16 01:15:17 - multi_factor_contradiction_policy - INFO - Initializing Graphiti...
+2025-09-16 01:15:17 - multi_factor_contradiction_policy - INFO - Connecting to Neo4j at bolt://localhost:7687 with user neo4j
+2025-09-16 01:15:17 - multi_factor_contradiction_policy - DEBUG - Initializing Groq LLM client
+2025-09-16 01:15:18 - multi_factor_contradiction_policy - DEBUG - Groq LLM client initialized successfully
+2025-09-16 01:15:18 - multi_factor_contradiction_policy - DEBUG - Initializing Graphiti instance
+2025-09-16 01:15:18 - multi_factor_contradiction_policy - INFO - Graphiti instance created successfully
+2025-09-16 01:15:18 - multi_factor_contradiction_policy - INFO - Building indices and constraints...
+2025-09-16 01:15:21 - multi_factor_contradiction_policy - INFO - Indices and constraints built successfully
+2025-09-16 01:15:21 - multi_factor_contradiction_policy - INFO - Loading policy configuration...
+2025-09-16 01:15:21 - multi_factor_contradiction_policy - INFO - Policy configuration loaded successfully
+2025-09-16 01:15:21 - multi_factor_contradiction_policy - INFO - MultiFactorContradictionPolicy instance created successfully
+2025-09-16 01:15:21 - multi_factor_contradiction_policy - INFO - Adding policies to knowledge graph...
+2025-09-16 01:15:21 - multi_factor_contradiction_policy - INFO - Starting to add multi-factor contradiction policies to knowledge graph...
+2025-09-16 01:15:21 - multi_factor_contradiction_policy - WARNING - Skipping potentially problematic policy: Off-hours restrictions override user clearances...
+2025-09-16 01:15:21 - multi_factor_contradiction_policy - WARNING - Skipping potentially problematic policy: Emergency phase overrides all time restrictions...
+2025-09-16 01:15:21 - multi_factor_contradiction_policy - WARNING - Skipping potentially problematic policy: Commander override permissions bypass time restric...
+2025-09-16 01:15:21 - multi_factor_contradiction_policy - WARNING - Skipping potentially problematic policy: Weekend restrictions apply regardless of clearance...
+2025-09-16 01:15:21 - multi_factor_contradiction_policy - DEBUG - Preparing to add 2 text policies to graph
+2025-09-16 01:15:21 - multi_factor_contradiction_policy - DEBUG - Adding text policy 1/2
+2025-09-16 01:15:24 - multi_factor_contradiction_policy - ERROR - Failed to add text policy 1: 'ascii' codec can't encode character '\u201d' in position 7: ordinal not in range(128)
+2025-09-16 01:15:24 - multi_factor_contradiction_policy - DEBUG - Adding text policy 2/2
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - ERROR - Failed to add text policy 2: 'ascii' codec can't encode character '\u201d' in position 7: ordinal not in range(128)
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - INFO - Successfully added multi-factor contradiction policies to knowledge graph
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - INFO - Starting policy tests...
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - INFO - Running test: User has clearance but off-hours restriction blocks access
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - INFO - Checking multi-factor contradiction policy for user user123
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - DEBUG - Detected data classification: confidential for query
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - DEBUG - Searching graph with optimized query: multi-factor contradiction policy confidential pre_deployment
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - ERROR - Error during graph search: 'ascii' codec can't encode character '\u201d' in position 7: ordinal not in range(128)
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - INFO - Continuing with policy logic despite graph search error
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - INFO - Resolving contradiction for user User 123
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - DEBUG - Clearance check: user_level=3, required_level=3, sufficient=True
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - DEBUG - Mission phase restriction: confidential in pre_deployment = block
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - DEBUG - Time restriction: confidential during off_hours = block
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - INFO - Policy decision: BLOCKED - Blocked due to OffHours restriction despite user clearance
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - INFO - Test result: Blocked - Blocked due to OffHours restriction despite user clearance
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - INFO - Running test: User has clearance and time allows access
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - INFO - Checking multi-factor contradiction policy for user user123
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - DEBUG - Detected data classification: secret for query
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - DEBUG - Searching graph with optimized query: multi-factor contradiction policy secret pre_deployment
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - ERROR - Error during graph search: 'ascii' codec can't encode character '\u201d' in position 7: ordinal not in range(128)
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - INFO - Continuing with policy logic despite graph search error
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - INFO - Resolving contradiction for user User 123
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - DEBUG - Clearance check: user_level=3, required_level=2, sufficient=True
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - DEBUG - Mission phase restriction: secret in pre_deployment = allow_with_clearance
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - DEBUG - Time restriction: secret during working_hours = block
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - INFO - Policy decision: BLOCKED - Blocked due to OffHours restriction despite user clearance
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - INFO - Test result: Blocked - Blocked due to OffHours restriction despite user clearance
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - INFO - Running test: Commander override bypasses weekend restrictions
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - INFO - Checking multi-factor contradiction policy for user commander
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - DEBUG - Detected data classification: confidential for query
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - DEBUG - Searching graph with optimized query: multi-factor contradiction policy confidential pre_deployment
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - ERROR - Error during graph search: 'ascii' codec can't encode character '\u201d' in position 7: ordinal not in range(128)
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - INFO - Continuing with policy logic despite graph search error
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - INFO - Resolving contradiction for user Commander
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - DEBUG - Clearance check: user_level=3, required_level=3, sufficient=True
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - DEBUG - Mission phase restriction: confidential in pre_deployment = block
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - DEBUG - Time restriction: confidential during weekend = block
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - DEBUG - Commander override permissions detected
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - INFO - Policy decision: ALLOWED - Access granted: commander override permissions
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - INFO - Test result: Allowed - Access granted: commander override permissions
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - INFO - Running test: Emergency phase overrides time and clearance restrictions
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - INFO - Checking multi-factor contradiction policy for user user456
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - DEBUG - No specific data classification detected
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - DEBUG - No specific classification detected, defaulting to internal
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - DEBUG - Searching graph with optimized query: multi-factor contradiction policy internal emergency
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - ERROR - Error during graph search: 'ascii' codec can't encode character '\u201d' in position 7: ordinal not in range(128)
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - INFO - Continuing with policy logic despite graph search error
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - INFO - Resolving contradiction for user User 456
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - DEBUG - Clearance check: user_level=2, required_level=1, sufficient=True
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - DEBUG - Mission phase restriction: internal in emergency = allow
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - DEBUG - Time restriction: internal during off_hours = allow
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - DEBUG - Emergency phase override detected
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - INFO - Policy decision: ALLOWED - Access granted: emergency phase overrides all restrictions
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - INFO - Test result: Allowed - Access granted: emergency phase overrides all restrictions
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - INFO - Running test: User lacks sufficient clearance for confidential data
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - INFO - Checking multi-factor contradiction policy for user user456
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - DEBUG - Detected data classification: confidential for query
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - DEBUG - Searching graph with optimized query: multi-factor contradiction policy confidential pre_deployment
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - ERROR - Error during graph search: 'ascii' codec can't encode character '\u201d' in position 7: ordinal not in range(128)
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - INFO - Continuing with policy logic despite graph search error
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - INFO - Resolving contradiction for user User 456
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - DEBUG - Clearance check: user_level=2, required_level=3, sufficient=False
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - DEBUG - Mission phase restriction: confidential in pre_deployment = block
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - DEBUG - Time restriction: confidential during working_hours = block
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - INFO - Policy decision: BLOCKED - Access denied: working_hours restrictions apply
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - INFO - Test result: Blocked - Access denied: working_hours restrictions apply
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - INFO - Running test: Weekend restrictions block access despite clearance
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - INFO - Checking multi-factor contradiction policy for user user123
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - DEBUG - No specific data classification detected
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - DEBUG - No specific classification detected, defaulting to internal
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - DEBUG - Searching graph with optimized query: multi-factor contradiction policy internal post_mission
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - ERROR - Error during graph search: 'ascii' codec can't encode character '\u201d' in position 7: ordinal not in range(128)
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - INFO - Continuing with policy logic despite graph search error
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - INFO - Resolving contradiction for user User 123
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - DEBUG - Clearance check: user_level=3, required_level=1, sufficient=True
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - DEBUG - Mission phase restriction: internal in post_mission = allow
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - DEBUG - Time restriction: internal during weekend = allow
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - INFO - Policy decision: ALLOWED - Access granted: all policy requirements satisfied
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - INFO - Test result: Allowed - Access granted: all policy requirements satisfied
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - INFO - Running test: Internal data is always accessible
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - INFO - Checking multi-factor contradiction policy for user user456
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - DEBUG - Detected data classification: internal for query
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - DEBUG - Searching graph with optimized query: multi-factor contradiction policy internal pre_deployment
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - ERROR - Error during graph search: 'ascii' codec can't encode character '\u201d' in position 7: ordinal not in range(128)
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - INFO - Continuing with policy logic despite graph search error
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - INFO - Resolving contradiction for user User 456
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - DEBUG - Clearance check: user_level=2, required_level=1, sufficient=True
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - DEBUG - Mission phase restriction: internal in pre_deployment = allow
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - DEBUG - Time restriction: internal during off_hours = allow
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - INFO - Policy decision: ALLOWED - Access granted: all policy requirements satisfied
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - INFO - Test result: Allowed - Access granted: all policy requirements satisfied
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - INFO - Running test: User lacks emergency access permissions
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - INFO - Checking multi-factor contradiction policy for user user456
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - DEBUG - No specific data classification detected
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - DEBUG - No specific classification detected, defaulting to internal
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - DEBUG - Searching graph with optimized query: multi-factor contradiction policy internal pre_deployment
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - ERROR - Error during graph search: 'ascii' codec can't encode character '\u201d' in position 7: ordinal not in range(128)
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - INFO - Continuing with policy logic despite graph search error
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - INFO - Resolving contradiction for user User 456
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - DEBUG - Clearance check: user_level=2, required_level=1, sufficient=True
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - DEBUG - Mission phase restriction: internal in pre_deployment = allow
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - DEBUG - Time restriction: internal during off_hours = allow
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - INFO - Policy decision: ALLOWED - Access granted: all policy requirements satisfied
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - INFO - Test result: Allowed - Access granted: all policy requirements satisfied
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - INFO - Running original scenario test...
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - INFO - Checking multi-factor contradiction policy for user user123
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - DEBUG - Detected data classification: confidential for query
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - DEBUG - Searching graph with optimized query: multi-factor contradiction policy confidential pre_deployment
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - ERROR - Error during graph search: 'ascii' codec can't encode character '\u201d' in position 7: ordinal not in range(128)
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - INFO - Continuing with policy logic despite graph search error
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - INFO - Resolving contradiction for user User 123
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - DEBUG - Clearance check: user_level=3, required_level=3, sufficient=True
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - DEBUG - Mission phase restriction: confidential in pre_deployment = block
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - DEBUG - Time restriction: confidential during off_hours = block
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - INFO - Policy decision: BLOCKED - Blocked due to OffHours restriction despite user clearance
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - INFO - Original scenario result: Blocked - Blocked due to OffHours restriction despite user clearance
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - INFO - Multi-Factor Contradiction Policy demonstration completed successfully
+2025-09-16 01:15:25 - multi_factor_contradiction_policy - INFO - Multi-Factor Contradiction Policy demonstration finished

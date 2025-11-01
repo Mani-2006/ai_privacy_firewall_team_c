@@ -1,0 +1,289 @@
+{
+  "data_classifications": {
+    "confidential": {
+      "description": "Confidential data requiring special clearance",
+      "level": "high",
+      "examples": [
+        "Project Zeus",
+        "Classified Documents",
+        "Secret Operations",
+        "Sensitive Intelligence",
+        "Top Secret Data"
+      ],
+      "restrictions": {
+        "pre_deployment": "block",
+        "off_hours": "block",
+        "weekend": "block",
+        "emergency": "allow"
+      }
+    },
+    "secret": {
+      "description": "Secret data with moderate restrictions",
+      "level": "medium",
+      "examples": [
+        "Mission Plans",
+        "Operational Data",
+        "Strategic Information",
+        "Tactical Details"
+      ],
+      "restrictions": {
+        "pre_deployment": "allow_with_clearance",
+        "off_hours": "block",
+        "weekend": "block",
+        "emergency": "allow"
+      }
+    },
+    "internal": {
+      "description": "Internal data with minimal restrictions",
+      "level": "low",
+      "examples": [
+        "General Reports",
+        "Public Information",
+        "Standard Procedures",
+        "Basic Documentation"
+      ],
+      "restrictions": {
+        "pre_deployment": "allow",
+        "off_hours": "allow",
+        "weekend": "allow",
+        "emergency": "allow"
+      }
+    }
+  },
+  "user_clearances": {
+    "user123": {
+      "name": "User 123",
+      "clearance_level": "confidential",
+      "roles": ["analyst", "operator"],
+      "active_clearances": ["confidential", "secret"],
+      "restrictions": [],
+      "emergency_access": true
+    },
+    "user456": {
+      "name": "User 456", 
+      "clearance_level": "secret",
+      "roles": ["observer"],
+      "active_clearances": ["secret", "internal"],
+      "restrictions": ["off_hours"],
+      "emergency_access": false
+    },
+    "commander": {
+      "name": "Commander",
+      "clearance_level": "confidential",
+      "roles": ["commander", "admin"],
+      "active_clearances": ["confidential", "secret", "internal"],
+      "restrictions": [],
+      "emergency_access": true,
+      "override_permissions": true
+    }
+  },
+  "mission_phases": {
+    "pre_deployment": {
+      "description": "Pre-deployment phase with strict access controls",
+      "time_restrictions": {
+        "working_hours": "08:00-17:00",
+        "off_hours": "17:00-08:00",
+        "weekend": "all_day"
+      },
+      "access_rules": {
+        "confidential": "block",
+        "secret": "allow_with_clearance",
+        "internal": "allow"
+      }
+    },
+    "active_mission": {
+      "description": "Active mission phase with operational access",
+      "time_restrictions": {
+        "working_hours": "all_day",
+        "off_hours": "all_day",
+        "weekend": "all_day"
+      },
+      "access_rules": {
+        "confidential": "allow_with_clearance",
+        "secret": "allow",
+        "internal": "allow"
+      }
+    },
+    "post_mission": {
+      "description": "Post mission phase with analysis access",
+      "time_restrictions": {
+        "working_hours": "08:00-17:00",
+        "off_hours": "17:00-08:00",
+        "weekend": "block"
+      },
+      "access_rules": {
+        "confidential": "allow_with_clearance",
+        "secret": "allow",
+        "internal": "allow"
+      }
+    },
+    "emergency": {
+      "description": "Emergency phase with full access",
+      "time_restrictions": {
+        "working_hours": "all_day",
+        "off_hours": "all_day",
+        "weekend": "all_day"
+      },
+      "access_rules": {
+        "confidential": "allow",
+        "secret": "allow",
+        "internal": "allow"
+      }
+    }
+  },
+  "time_periods": {
+    "working_hours": {
+      "description": "Standard working hours",
+      "start": "08:00",
+      "end": "17:00",
+      "days": ["monday", "tuesday", "wednesday", "thursday", "friday"],
+      "priority": "normal"
+    },
+    "off_hours": {
+      "description": "After hours access",
+      "start": "17:00",
+      "end": "08:00",
+      "days": ["monday", "tuesday", "wednesday", "thursday", "friday"],
+      "priority": "high"
+    },
+    "weekend": {
+      "description": "Weekend access",
+      "start": "00:00",
+      "end": "23:59",
+      "days": ["saturday", "sunday"],
+      "priority": "high"
+    }
+  },
+  "contradiction_rules": [
+    "Off-hours restrictions override user clearances",
+    "Emergency phase overrides all time restrictions",
+    "Commander override permissions bypass time restrictions",
+    "Confidential data requires both clearance and time compliance",
+    "Weekend restrictions apply regardless of clearance level",
+    "Emergency access requires emergency phase or commander override"
+  ],
+  "resolution_priorities": [
+    "Emergency phase (highest priority)",
+    "Commander override permissions",
+    "Time-based restrictions (off-hours, weekend)",
+    "User clearance levels",
+    "Mission phase restrictions",
+    "Data classification restrictions (lowest priority)"
+  ],
+  "test_scenarios": [
+    {
+      "scenario": "confidential_off_hours_conflict",
+      "user": "user123",
+      "query": "What are the coordinates of Project Zeus?",
+      "data_classification": "confidential",
+      "mission_phase": "pre_deployment",
+      "time_period": "off_hours",
+      "user_clearance": "confidential",
+      "expected_result": "blocked",
+      "expected_reason": "Blocked due to OffHours restriction despite user clearance",
+      "contradiction_type": "clearance_vs_time",
+      "description": "User has clearance but off-hours restriction blocks access"
+    },
+    {
+      "scenario": "secret_working_hours_allow",
+      "user": "user123",
+      "query": "Show me the mission plans for Operation Alpha",
+      "data_classification": "secret",
+      "mission_phase": "pre_deployment",
+      "time_period": "working_hours",
+      "user_clearance": "confidential",
+      "expected_result": "allowed",
+      "expected_reason": "Access granted: user has sufficient clearance during working hours",
+      "contradiction_type": "none",
+      "description": "User has clearance and time allows access"
+    },
+    {
+      "scenario": "commander_override_weekend",
+      "user": "commander",
+      "query": "Access Project Zeus coordinates immediately",
+      "data_classification": "confidential",
+      "mission_phase": "pre_deployment",
+      "time_period": "weekend",
+      "user_clearance": "confidential",
+      "expected_result": "allowed",
+      "expected_reason": "Access granted: commander override permissions",
+      "contradiction_type": "override",
+      "description": "Commander override bypasses weekend restrictions"
+    },
+    {
+      "scenario": "emergency_phase_override",
+      "user": "user456",
+      "query": "Emergency access to confidential data",
+      "data_classification": "confidential",
+      "mission_phase": "emergency",
+      "time_period": "off_hours",
+      "user_clearance": "secret",
+      "expected_result": "allowed",
+      "expected_reason": "Access granted: emergency phase overrides all restrictions",
+      "contradiction_type": "emergency_override",
+      "description": "Emergency phase overrides time and clearance restrictions"
+    },
+    {
+      "scenario": "insufficient_clearance",
+      "user": "user456",
+      "query": "Show confidential Project Zeus data",
+      "data_classification": "confidential",
+      "mission_phase": "pre_deployment",
+      "time_period": "working_hours",
+      "user_clearance": "secret",
+      "expected_result": "blocked",
+      "expected_reason": "Access denied: insufficient clearance for confidential data",
+      "contradiction_type": "clearance_insufficient",
+      "description": "User lacks sufficient clearance for confidential data"
+    },
+    {
+      "scenario": "weekend_restriction_override",
+      "user": "user123",
+      "query": "Access secret data on weekend",
+      "data_classification": "secret",
+      "mission_phase": "post_mission",
+      "time_period": "weekend",
+      "user_clearance": "confidential",
+      "expected_result": "blocked",
+      "expected_reason": "Access denied: weekend restrictions apply regardless of clearance",
+      "contradiction_type": "time_restriction",
+      "description": "Weekend restrictions block access despite clearance"
+    },
+    {
+      "scenario": "internal_data_always_allow",
+      "user": "user456",
+      "query": "Show general reports",
+      "data_classification": "internal",
+      "mission_phase": "pre_deployment",
+      "time_period": "off_hours",
+      "user_clearance": "secret",
+      "expected_result": "allowed",
+      "expected_reason": "Access granted: internal data has no restrictions",
+      "contradiction_type": "none",
+      "description": "Internal data is always accessible"
+    },
+    {
+      "scenario": "emergency_access_denied",
+      "user": "user456",
+      "query": "Emergency access to confidential data",
+      "data_classification": "confidential",
+      "mission_phase": "pre_deployment",
+      "time_period": "off_hours",
+      "user_clearance": "secret",
+      "expected_result": "blocked",
+      "expected_reason": "Access denied: emergency access requires emergency phase or commander override",
+      "contradiction_type": "emergency_denied",
+      "description": "User lacks emergency access permissions"
+    }
+  ],
+  "firewall_rules": [
+    "Check mission phase restrictions first",
+    "Evaluate time-based restrictions",
+    "Verify user clearance levels",
+    "Apply commander override permissions",
+    "Handle emergency phase overrides",
+    "Resolve contradictions based on priority hierarchy",
+    "Log detailed rationale for all decisions",
+    "Provide clear blocking/allowance messages"
+  ]
+} 

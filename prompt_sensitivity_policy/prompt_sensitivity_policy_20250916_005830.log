@@ -1,0 +1,116 @@
+2025-09-16 00:58:30 - prompt_sensitivity_policy - INFO - Starting Prompt Sensitivity Policy demonstration
+2025-09-16 00:58:30 - prompt_sensitivity_policy - INFO - Initializing Graphiti...
+2025-09-16 00:58:30 - prompt_sensitivity_policy - INFO - Connecting to Neo4j at bolt://localhost:7687 with user neo4j
+2025-09-16 00:58:30 - prompt_sensitivity_policy - DEBUG - Initializing Groq LLM client
+2025-09-16 00:58:30 - prompt_sensitivity_policy - DEBUG - Groq LLM client initialized successfully
+2025-09-16 00:58:30 - prompt_sensitivity_policy - DEBUG - Initializing Graphiti instance
+2025-09-16 00:58:31 - prompt_sensitivity_policy - INFO - Graphiti instance created successfully
+2025-09-16 00:58:31 - prompt_sensitivity_policy - INFO - Building indices and constraints...
+2025-09-16 00:58:32 - prompt_sensitivity_policy - INFO - Indices and constraints built successfully
+2025-09-16 00:58:32 - prompt_sensitivity_policy - INFO - Loading policy configuration...
+2025-09-16 00:58:32 - prompt_sensitivity_policy - INFO - Policy configuration loaded successfully
+2025-09-16 00:58:32 - prompt_sensitivity_policy - INFO - PromptSensitivityPolicy instance created successfully
+2025-09-16 00:58:32 - prompt_sensitivity_policy - INFO - Adding policies to knowledge graph...
+2025-09-16 00:58:32 - prompt_sensitivity_policy - INFO - Starting to add prompt sensitivity policies to knowledge graph...
+2025-09-16 00:58:32 - prompt_sensitivity_policy - WARNING - Skipping potentially problematic policy: Redaction patterns must be consistent and clear...
+2025-09-16 00:58:32 - prompt_sensitivity_policy - DEBUG - Preparing to add 7 text policies to graph
+2025-09-16 00:58:32 - prompt_sensitivity_policy - DEBUG - Adding text policy 1/7
+2025-09-16 00:58:36 - prompt_sensitivity_policy - ERROR - Failed to add text policy 1: 'ascii' codec can't encode character '\u201d' in position 7: ordinal not in range(128)
+2025-09-16 00:58:36 - prompt_sensitivity_policy - DEBUG - Adding text policy 2/7
+2025-09-16 00:58:36 - prompt_sensitivity_policy - ERROR - Failed to add text policy 2: 'ascii' codec can't encode character '\u201d' in position 7: ordinal not in range(128)
+2025-09-16 00:58:36 - prompt_sensitivity_policy - DEBUG - Adding text policy 3/7
+2025-09-16 00:58:37 - prompt_sensitivity_policy - ERROR - Failed to add text policy 3: 'ascii' codec can't encode character '\u201d' in position 7: ordinal not in range(128)
+2025-09-16 00:58:37 - prompt_sensitivity_policy - DEBUG - Adding text policy 4/7
+2025-09-16 00:58:37 - prompt_sensitivity_policy - ERROR - Failed to add text policy 4: 'ascii' codec can't encode character '\u201d' in position 7: ordinal not in range(128)
+2025-09-16 00:58:37 - prompt_sensitivity_policy - DEBUG - Adding text policy 5/7
+2025-09-16 00:58:37 - prompt_sensitivity_policy - ERROR - Failed to add text policy 5: 'ascii' codec can't encode character '\u201d' in position 7: ordinal not in range(128)
+2025-09-16 00:58:37 - prompt_sensitivity_policy - DEBUG - Adding text policy 6/7
+2025-09-16 00:58:38 - prompt_sensitivity_policy - ERROR - Failed to add text policy 6: 'ascii' codec can't encode character '\u201d' in position 7: ordinal not in range(128)
+2025-09-16 00:58:38 - prompt_sensitivity_policy - DEBUG - Adding text policy 7/7
+2025-09-16 00:58:38 - prompt_sensitivity_policy - ERROR - Failed to add text policy 7: 'ascii' codec can't encode character '\u201d' in position 7: ordinal not in range(128)
+2025-09-16 00:58:38 - prompt_sensitivity_policy - INFO - Successfully added all prompt sensitivity policies to knowledge graph
+2025-09-16 00:58:38 - prompt_sensitivity_policy - INFO - Starting policy tests...
+2025-09-16 00:58:38 - prompt_sensitivity_policy - INFO - Running test: Active mission with code name, location, and personnel redaction
+2025-09-16 00:58:38 - prompt_sensitivity_policy - INFO - Checking prompt sensitivity policy for phase: active_mission
+2025-09-16 00:58:38 - prompt_sensitivity_policy - DEBUG - Detected 1 sensitive terms in text
+2025-09-16 00:58:38 - prompt_sensitivity_policy - INFO - Redacting text for mission phase: active_mission
+2025-09-16 00:58:38 - prompt_sensitivity_policy - DEBUG - Detected 1 sensitive terms in text
+2025-09-16 00:58:38 - prompt_sensitivity_policy - INFO - Redacted 'Project Zeus' to '[REDACTED]' (type: codename)
+2025-09-16 00:58:38 - prompt_sensitivity_policy - DEBUG - Searching graph with optimized query: prompt sensitivity policy active_mission
+2025-09-16 00:58:38 - prompt_sensitivity_policy - ERROR - Error during graph search: 'ascii' codec can't encode character '\u201d' in position 7: ordinal not in range(128)
+2025-09-16 00:58:38 - prompt_sensitivity_policy - INFO - Continuing with policy logic despite graph search error
+2025-09-16 00:58:38 - prompt_sensitivity_policy - INFO - Test result: Success - 1 terms redacted
+2025-09-16 00:58:38 - prompt_sensitivity_policy - INFO - Running test: Active mission with code name redaction, technical info preserved
+2025-09-16 00:58:38 - prompt_sensitivity_policy - INFO - Checking prompt sensitivity policy for phase: active_mission
+2025-09-16 00:58:38 - prompt_sensitivity_policy - DEBUG - Detected 1 sensitive terms in text
+2025-09-16 00:58:38 - prompt_sensitivity_policy - INFO - Redacting text for mission phase: active_mission
+2025-09-16 00:58:38 - prompt_sensitivity_policy - DEBUG - Detected 1 sensitive terms in text
+2025-09-16 00:58:38 - prompt_sensitivity_policy - INFO - Redacted 'Alpha Protocol' to '[REDACTED]' (type: codename)
+2025-09-16 00:58:38 - prompt_sensitivity_policy - DEBUG - Searching graph with optimized query: prompt sensitivity policy active_mission
+2025-09-16 00:58:38 - prompt_sensitivity_policy - ERROR - Error during graph search: 'ascii' codec can't encode character '\u201d' in position 7: ordinal not in range(128)
+2025-09-16 00:58:38 - prompt_sensitivity_policy - INFO - Continuing with policy logic despite graph search error
+2025-09-16 00:58:38 - prompt_sensitivity_policy - INFO - Test result: Success - 1 terms redacted
+2025-09-16 00:58:38 - prompt_sensitivity_policy - INFO - Running test: Pre-deployment with full disclosure
+2025-09-16 00:58:38 - prompt_sensitivity_policy - INFO - Checking prompt sensitivity policy for phase: pre_deployment
+2025-09-16 00:58:38 - prompt_sensitivity_policy - DEBUG - Detected 1 sensitive terms in text
+2025-09-16 00:58:38 - prompt_sensitivity_policy - INFO - Redacting text for mission phase: pre_deployment
+2025-09-16 00:58:38 - prompt_sensitivity_policy - DEBUG - Detected 1 sensitive terms in text
+2025-09-16 00:58:38 - prompt_sensitivity_policy - DEBUG - Term 'Project Zeus' (type: codename) not redacted in phase pre_deployment
+2025-09-16 00:58:38 - prompt_sensitivity_policy - DEBUG - Searching graph with optimized query: prompt sensitivity policy pre_deployment
+2025-09-16 00:58:38 - prompt_sensitivity_policy - ERROR - Error during graph search: 'ascii' codec can't encode character '\u201d' in position 7: ordinal not in range(128)
+2025-09-16 00:58:38 - prompt_sensitivity_policy - INFO - Continuing with policy logic despite graph search error
+2025-09-16 00:58:38 - prompt_sensitivity_policy - INFO - Test result: Success - 0 terms redacted
+2025-09-16 00:58:38 - prompt_sensitivity_policy - INFO - Running test: Post-mission with personnel redaction only
+2025-09-16 00:58:38 - prompt_sensitivity_policy - INFO - Checking prompt sensitivity policy for phase: post_mission
+2025-09-16 00:58:38 - prompt_sensitivity_policy - DEBUG - Detected 1 sensitive terms in text
+2025-09-16 00:58:38 - prompt_sensitivity_policy - INFO - Redacting text for mission phase: post_mission
+2025-09-16 00:58:38 - prompt_sensitivity_policy - DEBUG - Detected 1 sensitive terms in text
+2025-09-16 00:58:38 - prompt_sensitivity_policy - DEBUG - Term 'Project Zeus' (type: codename) not redacted in phase post_mission
+2025-09-16 00:58:38 - prompt_sensitivity_policy - DEBUG - Searching graph with optimized query: prompt sensitivity policy post_mission
+2025-09-16 00:58:38 - prompt_sensitivity_policy - ERROR - Error during graph search: 'ascii' codec can't encode character '\u201d' in position 7: ordinal not in range(128)
+2025-09-16 00:58:38 - prompt_sensitivity_policy - INFO - Continuing with policy logic despite graph search error
+2025-09-16 00:58:38 - prompt_sensitivity_policy - INFO - Test result: Success - 0 terms redacted
+2025-09-16 00:58:38 - prompt_sensitivity_policy - INFO - Running test: Emergency with full disclosure for safety
+2025-09-16 00:58:38 - prompt_sensitivity_policy - INFO - Checking prompt sensitivity policy for phase: emergency
+2025-09-16 00:58:38 - prompt_sensitivity_policy - DEBUG - Detected 1 sensitive terms in text
+2025-09-16 00:58:38 - prompt_sensitivity_policy - INFO - Redacting text for mission phase: emergency
+2025-09-16 00:58:38 - prompt_sensitivity_policy - DEBUG - Detected 1 sensitive terms in text
+2025-09-16 00:58:38 - prompt_sensitivity_policy - DEBUG - Term 'Project Zeus' (type: codename) not redacted in phase emergency
+2025-09-16 00:58:38 - prompt_sensitivity_policy - DEBUG - Searching graph with optimized query: prompt sensitivity policy emergency
+2025-09-16 00:58:38 - prompt_sensitivity_policy - ERROR - Error during graph search: 'ascii' codec can't encode character '\u201d' in position 7: ordinal not in range(128)
+2025-09-16 00:58:38 - prompt_sensitivity_policy - INFO - Continuing with policy logic despite graph search error
+2025-09-16 00:58:38 - prompt_sensitivity_policy - INFO - Test result: Success - 0 terms redacted
+2025-09-16 00:58:38 - prompt_sensitivity_policy - INFO - Running test: Active mission with code name redaction, location and technical preserved
+2025-09-16 00:58:38 - prompt_sensitivity_policy - INFO - Checking prompt sensitivity policy for phase: active_mission
+2025-09-16 00:58:38 - prompt_sensitivity_policy - DEBUG - Detected 1 sensitive terms in text
+2025-09-16 00:58:38 - prompt_sensitivity_policy - INFO - Redacting text for mission phase: active_mission
+2025-09-16 00:58:38 - prompt_sensitivity_policy - DEBUG - Detected 1 sensitive terms in text
+2025-09-16 00:58:38 - prompt_sensitivity_policy - INFO - Redacted 'Beta Initiative' to '[REDACTED]' (type: codename)
+2025-09-16 00:58:38 - prompt_sensitivity_policy - DEBUG - Searching graph with optimized query: prompt sensitivity policy active_mission
+2025-09-16 00:58:38 - prompt_sensitivity_policy - ERROR - Error during graph search: 'ascii' codec can't encode character '\u201d' in position 7: ordinal not in range(128)
+2025-09-16 00:58:38 - prompt_sensitivity_policy - INFO - Continuing with policy logic despite graph search error
+2025-09-16 00:58:38 - prompt_sensitivity_policy - INFO - Test result: Success - 1 terms redacted
+2025-09-16 00:58:38 - prompt_sensitivity_policy - INFO - Running test: Post-mission with personnel redaction, code name preserved
+2025-09-16 00:58:38 - prompt_sensitivity_policy - INFO - Checking prompt sensitivity policy for phase: post_mission
+2025-09-16 00:58:38 - prompt_sensitivity_policy - DEBUG - Detected 1 sensitive terms in text
+2025-09-16 00:58:38 - prompt_sensitivity_policy - INFO - Redacting text for mission phase: post_mission
+2025-09-16 00:58:38 - prompt_sensitivity_policy - DEBUG - Detected 1 sensitive terms in text
+2025-09-16 00:58:38 - prompt_sensitivity_policy - DEBUG - Term 'Gamma Sequence' (type: codename) not redacted in phase post_mission
+2025-09-16 00:58:38 - prompt_sensitivity_policy - DEBUG - Searching graph with optimized query: prompt sensitivity policy post_mission
+2025-09-16 00:58:38 - prompt_sensitivity_policy - ERROR - Error during graph search: 'ascii' codec can't encode character '\u201d' in position 7: ordinal not in range(128)
+2025-09-16 00:58:38 - prompt_sensitivity_policy - INFO - Continuing with policy logic despite graph search error
+2025-09-16 00:58:38 - prompt_sensitivity_policy - INFO - Test result: Success - 0 terms redacted
+2025-09-16 00:58:38 - prompt_sensitivity_policy - INFO - Running original scenario test...
+2025-09-16 00:58:38 - prompt_sensitivity_policy - INFO - Checking prompt sensitivity policy for phase: active_mission
+2025-09-16 00:58:38 - prompt_sensitivity_policy - DEBUG - Detected 1 sensitive terms in text
+2025-09-16 00:58:38 - prompt_sensitivity_policy - INFO - Redacting text for mission phase: active_mission
+2025-09-16 00:58:38 - prompt_sensitivity_policy - DEBUG - Detected 1 sensitive terms in text
+2025-09-16 00:58:38 - prompt_sensitivity_policy - INFO - Redacted 'Project Zeus' to '[REDACTED]' (type: codename)
+2025-09-16 00:58:38 - prompt_sensitivity_policy - DEBUG - Searching graph with optimized query: prompt sensitivity policy active_mission
+2025-09-16 00:58:38 - prompt_sensitivity_policy - ERROR - Error during graph search: 'ascii' codec can't encode character '\u201d' in position 7: ordinal not in range(128)
+2025-09-16 00:58:38 - prompt_sensitivity_policy - INFO - Continuing with policy logic despite graph search error
+2025-09-16 00:58:38 - prompt_sensitivity_policy - INFO - Original scenario result: Success - 1 terms redacted
+2025-09-16 00:58:38 - prompt_sensitivity_policy - INFO - Prompt Sensitivity Policy demonstration completed successfully
+2025-09-16 00:58:38 - prompt_sensitivity_policy - INFO - Closing Graphiti connection...
+2025-09-16 00:58:38 - prompt_sensitivity_policy - INFO - Graphiti connection closed successfully
+2025-09-16 00:58:38 - prompt_sensitivity_policy - INFO - Prompt Sensitivity Policy demonstration finished

@@ -1,0 +1,151 @@
+{
+  "sensitive_terms": {
+    "codename": {
+      "description": "Code names and project identifiers that must be redacted",
+      "sensitivity_level": "high",
+      "redaction_pattern": "[REDACTED]",
+      "examples": [
+        "Project Zeus",
+        "Operation Phoenix",
+        "Alpha Protocol",
+        "Beta Initiative",
+        "Gamma Sequence"
+      ]
+    },
+    "location": {
+      "description": "Geographic locations and coordinates",
+      "sensitivity_level": "medium",
+      "redaction_pattern": "[LOCATION]",
+      "examples": [
+        "Grid coordinates",
+        "Latitude/Longitude",
+        "Specific addresses",
+        "Base locations"
+      ]
+    },
+    "personnel": {
+      "description": "Names of personnel and team members",
+      "sensitivity_level": "high",
+      "redaction_pattern": "[PERSONNEL]",
+      "examples": [
+        "Agent names",
+        "Team member identities",
+        "Contact information"
+      ]
+    },
+    "technical": {
+      "description": "Technical specifications and capabilities",
+      "sensitivity_level": "medium",
+      "redaction_pattern": "[TECHNICAL]",
+      "examples": [
+        "System specifications",
+        "Capability details",
+        "Technical parameters"
+      ]
+    }
+  },
+  "mission_phases": {
+    "pre_deployment": {
+      "description": "Pre-deployment planning phase",
+      "redaction_level": "minimal",
+      "allowed_terms": ["codename", "location", "personnel", "technical"],
+      "examples": [
+        "Full disclosure for planning",
+        "All terms visible for preparation"
+      ]
+    },
+    "active_mission": {
+      "description": "Active mission execution phase",
+      "redaction_level": "strict",
+      "redacted_terms": ["codename", "location", "personnel"],
+      "allowed_terms": ["technical"],
+      "examples": [
+        "Code names must be redacted",
+        "Locations must be protected",
+        "Personnel identities hidden"
+      ]
+    },
+    "post_mission": {
+      "description": "Post-mission analysis phase",
+      "redaction_level": "moderate",
+      "redacted_terms": ["personnel"],
+      "allowed_terms": ["codename", "location", "technical"],
+      "examples": [
+        "Code names can be revealed",
+        "Locations can be discussed",
+        "Personnel still protected"
+      ]
+    },
+    "emergency": {
+      "description": "Emergency response phase",
+      "redaction_level": "minimal",
+      "allowed_terms": ["codename", "location", "personnel", "technical"],
+      "examples": [
+        "Full disclosure for emergency response",
+        "All information available for safety"
+      ]
+    }
+  },
+  "redaction_rules": [
+    "Code names must be redacted during Active Mission phase",
+    "Geographic locations must be protected during Active Mission",
+    "Personnel identities must be hidden during Active Mission and Post Mission",
+    "Technical specifications can be discussed in all phases",
+    "Emergency phase allows full disclosure for safety",
+    "Pre-deployment phase allows full disclosure for planning",
+    "Redaction patterns must be consistent and clear",
+    "Context must be preserved while redacting sensitive terms"
+  ],
+  "test_scenarios": [
+    {
+      "phase": "active_mission",
+      "input_text": "Project Zeus is moving to phase 3 at coordinates 40.7128, -74.0060 with Agent Smith leading the team.",
+      "expected_output": "[REDACTED] is moving to phase 3 at [LOCATION] with [PERSONNEL] leading the team.",
+      "description": "Active mission with code name, location, and personnel redaction"
+    },
+    {
+      "phase": "active_mission",
+      "input_text": "The Alpha Protocol system has reached 85% efficiency with enhanced capabilities.",
+      "expected_output": "[REDACTED] system has reached 85% efficiency with enhanced capabilities.",
+      "description": "Active mission with code name redaction, technical info preserved"
+    },
+    {
+      "phase": "pre_deployment",
+      "input_text": "Project Zeus is moving to phase 3 at coordinates 40.7128, -74.0060 with Agent Smith leading the team.",
+      "expected_output": "Project Zeus is moving to phase 3 at coordinates 40.7128, -74.0060 with Agent Smith leading the team.",
+      "description": "Pre-deployment with full disclosure"
+    },
+    {
+      "phase": "post_mission",
+      "input_text": "Project Zeus completed successfully at coordinates 40.7128, -74.0060 with Agent Smith leading the team.",
+      "expected_output": "Project Zeus completed successfully at coordinates 40.7128, -74.0060 with [PERSONNEL] leading the team.",
+      "description": "Post-mission with personnel redaction only"
+    },
+    {
+      "phase": "emergency",
+      "input_text": "Project Zeus needs immediate support at coordinates 40.7128, -74.0060 with Agent Smith in critical condition.",
+      "expected_output": "Project Zeus needs immediate support at coordinates 40.7128, -74.0060 with Agent Smith in critical condition.",
+      "description": "Emergency with full disclosure for safety"
+    },
+    {
+      "phase": "active_mission",
+      "input_text": "Beta Initiative team has deployed to the northern sector with technical specifications meeting all requirements.",
+      "expected_output": "[REDACTED] team has deployed to the northern sector with technical specifications meeting all requirements.",
+      "description": "Active mission with code name redaction, location and technical preserved"
+    },
+    {
+      "phase": "post_mission",
+      "input_text": "Gamma Sequence analysis shows 95% success rate with Agent Johnson providing detailed reports.",
+      "expected_output": "Gamma Sequence analysis shows 95% success rate with [PERSONNEL] providing detailed reports.",
+      "description": "Post-mission with personnel redaction, code name preserved"
+    }
+  ],
+  "firewall_rules": [
+    "Detect sensitive terms in output before delivery",
+    "Apply phase-specific redaction rules",
+    "Preserve context while redacting sensitive information",
+    "Log all redaction actions for audit purposes",
+    "Allow emergency overrides for safety-critical situations",
+    "Maintain consistent redaction patterns across all outputs"
+  ]
+} 

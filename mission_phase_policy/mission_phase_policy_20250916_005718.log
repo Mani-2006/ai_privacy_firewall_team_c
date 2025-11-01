@@ -1,0 +1,202 @@
+2025-09-16 00:57:18 - mission_phase_policy - INFO - Starting Mission Phase Policy demonstration
+2025-09-16 00:57:18 - mission_phase_policy - INFO - Initializing Graphiti...
+2025-09-16 00:57:18 - mission_phase_policy - INFO - Connecting to Neo4j at bolt://localhost:7687 with user neo4j
+2025-09-16 00:57:18 - mission_phase_policy - DEBUG - Initializing Groq LLM client
+2025-09-16 00:57:20 - mission_phase_policy - DEBUG - Groq LLM client initialized successfully
+2025-09-16 00:57:20 - mission_phase_policy - DEBUG - Initializing Graphiti instance
+2025-09-16 00:57:20 - mission_phase_policy - INFO - Graphiti instance created successfully
+2025-09-16 00:57:20 - mission_phase_policy - INFO - Building indices and constraints...
+2025-09-16 00:57:24 - mission_phase_policy - INFO - Indices and constraints built successfully
+2025-09-16 00:57:24 - mission_phase_policy - INFO - Loading policy configuration...
+2025-09-16 00:57:24 - mission_phase_policy - INFO - Policy configuration loaded successfully
+2025-09-16 00:57:24 - mission_phase_policy - INFO - MissionPhasePolicy instance created successfully
+2025-09-16 00:57:24 - mission_phase_policy - INFO - Adding policies to knowledge graph...
+2025-09-16 00:57:24 - mission_phase_policy - INFO - Starting to add mission phase policies to knowledge graph...
+2025-09-16 00:57:24 - mission_phase_policy - WARNING - Skipping potentially problematic policy: Operator role has access to operational status dur...
+2025-09-16 00:57:24 - mission_phase_policy - WARNING - Skipping potentially problematic policy: OperationalStatus provides current mission state a...
+2025-09-16 00:57:24 - mission_phase_policy - WARNING - Skipping potentially problematic policy: Emergency phase overrides normal restrictions for ...
+2025-09-16 00:57:24 - mission_phase_policy - WARNING - Skipping potentially problematic policy: Commander role can override phase restrictions for...
+2025-09-16 00:57:24 - mission_phase_policy - DEBUG - Preparing to add 16 text policies to graph
+2025-09-16 00:57:24 - mission_phase_policy - DEBUG - Adding text policy 1/16
+2025-09-16 00:57:27 - mission_phase_policy - ERROR - Failed to add text policy 1: 'ascii' codec can't encode character '\u201d' in position 7: ordinal not in range(128)
+2025-09-16 00:57:27 - mission_phase_policy - DEBUG - Adding text policy 2/16
+2025-09-16 00:57:28 - mission_phase_policy - ERROR - Failed to add text policy 2: 'ascii' codec can't encode character '\u201d' in position 7: ordinal not in range(128)
+2025-09-16 00:57:28 - mission_phase_policy - DEBUG - Adding text policy 3/16
+2025-09-16 00:57:28 - mission_phase_policy - ERROR - Failed to add text policy 3: 'ascii' codec can't encode character '\u201d' in position 7: ordinal not in range(128)
+2025-09-16 00:57:28 - mission_phase_policy - DEBUG - Adding text policy 4/16
+2025-09-16 00:57:29 - mission_phase_policy - ERROR - Failed to add text policy 4: 'ascii' codec can't encode character '\u201d' in position 7: ordinal not in range(128)
+2025-09-16 00:57:29 - mission_phase_policy - DEBUG - Adding text policy 5/16
+2025-09-16 00:57:29 - mission_phase_policy - ERROR - Failed to add text policy 5: 'ascii' codec can't encode character '\u201d' in position 7: ordinal not in range(128)
+2025-09-16 00:57:29 - mission_phase_policy - DEBUG - Adding text policy 6/16
+2025-09-16 00:57:29 - mission_phase_policy - ERROR - Failed to add text policy 6: 'ascii' codec can't encode character '\u201d' in position 7: ordinal not in range(128)
+2025-09-16 00:57:29 - mission_phase_policy - DEBUG - Adding text policy 7/16
+2025-09-16 00:57:30 - mission_phase_policy - ERROR - Failed to add text policy 7: 'ascii' codec can't encode character '\u201d' in position 7: ordinal not in range(128)
+2025-09-16 00:57:30 - mission_phase_policy - DEBUG - Adding text policy 8/16
+2025-09-16 00:57:30 - mission_phase_policy - ERROR - Failed to add text policy 8: 'ascii' codec can't encode character '\u201d' in position 7: ordinal not in range(128)
+2025-09-16 00:57:30 - mission_phase_policy - DEBUG - Adding text policy 9/16
+2025-09-16 00:57:30 - mission_phase_policy - ERROR - Failed to add text policy 9: 'ascii' codec can't encode character '\u201d' in position 7: ordinal not in range(128)
+2025-09-16 00:57:30 - mission_phase_policy - DEBUG - Adding text policy 10/16
+2025-09-16 00:57:31 - mission_phase_policy - ERROR - Failed to add text policy 10: 'ascii' codec can't encode character '\u201d' in position 7: ordinal not in range(128)
+2025-09-16 00:57:31 - mission_phase_policy - DEBUG - Adding text policy 11/16
+2025-09-16 00:57:31 - mission_phase_policy - ERROR - Failed to add text policy 11: 'ascii' codec can't encode character '\u201d' in position 7: ordinal not in range(128)
+2025-09-16 00:57:31 - mission_phase_policy - DEBUG - Adding text policy 12/16
+2025-09-16 00:57:31 - mission_phase_policy - ERROR - Failed to add text policy 12: 'ascii' codec can't encode character '\u201d' in position 7: ordinal not in range(128)
+2025-09-16 00:57:31 - mission_phase_policy - DEBUG - Adding text policy 13/16
+2025-09-16 00:57:32 - mission_phase_policy - ERROR - Failed to add text policy 13: 'ascii' codec can't encode character '\u201d' in position 7: ordinal not in range(128)
+2025-09-16 00:57:32 - mission_phase_policy - DEBUG - Adding text policy 14/16
+2025-09-16 00:57:32 - mission_phase_policy - ERROR - Failed to add text policy 14: 'ascii' codec can't encode character '\u201d' in position 7: ordinal not in range(128)
+2025-09-16 00:57:32 - mission_phase_policy - DEBUG - Adding text policy 15/16
+2025-09-16 00:57:33 - mission_phase_policy - ERROR - Failed to add text policy 15: 'ascii' codec can't encode character '\u201d' in position 7: ordinal not in range(128)
+2025-09-16 00:57:33 - mission_phase_policy - DEBUG - Adding text policy 16/16
+2025-09-16 00:57:33 - mission_phase_policy - ERROR - Failed to add text policy 16: 'ascii' codec can't encode character '\u201d' in position 7: ordinal not in range(128)
+2025-09-16 00:57:33 - mission_phase_policy - INFO - Successfully added mission phase policies to knowledge graph
+2025-09-16 00:57:33 - mission_phase_policy - INFO - Starting policy tests...
+2025-09-16 00:57:33 - mission_phase_policy - INFO - Running test: Commander accessing strategic objectives during pre-deployment
+2025-09-16 00:57:33 - mission_phase_policy - INFO - Checking mission policy for user User123 (Role: commander, Phase: pre_deployment, Query: missionobjectives)
+2025-09-16 00:57:33 - mission_phase_policy - DEBUG - Searching graph with optimized query: mission phase policy pre_deployment commander
+2025-09-16 00:57:33 - mission_phase_policy - ERROR - Error during graph search: 'ascii' codec can't encode character '\u201d' in position 7: ordinal not in range(128)
+2025-09-16 00:57:33 - mission_phase_policy - INFO - Continuing with policy logic despite graph search error
+2025-09-16 00:57:33 - mission_phase_policy - DEBUG - Applying policy logic for commander in pre_deployment phase accessing missionobjectives
+2025-09-16 00:57:33 - mission_phase_policy - INFO - Commander override detected for MissionObjectives
+2025-09-16 00:57:33 - mission_phase_policy - INFO - Policy decision: True - Commander role has override permissions for MissionObjectives
+2025-09-16 00:57:33 - mission_phase_policy - INFO - Test result: ✅ ALLOWED - Commander role has override permissions for MissionObjectives
+2025-09-16 00:57:33 - mission_phase_policy - INFO - Running test: Analyst trying to access objectives during pre-deployment
+2025-09-16 00:57:33 - mission_phase_policy - INFO - Checking mission policy for user User123 (Role: analyst, Phase: pre_deployment, Query: missionobjectives)
+2025-09-16 00:57:33 - mission_phase_policy - DEBUG - Searching graph with optimized query: mission phase policy pre_deployment analyst
+2025-09-16 00:57:33 - mission_phase_policy - ERROR - Error during graph search: 'ascii' codec can't encode character '\u201d' in position 7: ordinal not in range(128)
+2025-09-16 00:57:33 - mission_phase_policy - INFO - Continuing with policy logic despite graph search error
+2025-09-16 00:57:33 - mission_phase_policy - DEBUG - Applying policy logic for analyst in pre_deployment phase accessing missionobjectives
+2025-09-16 00:57:33 - mission_phase_policy - DEBUG - Applying Pre-Deployment phase policy
+2025-09-16 00:57:33 - mission_phase_policy - DEBUG - Checking Pre-Deployment policy for analyst accessing missionobjectives
+2025-09-16 00:57:33 - mission_phase_policy - INFO - analyst denied access to MissionObjectives during Pre-Deployment
+2025-09-16 00:57:33 - mission_phase_policy - INFO - Policy decision: False - Only Commander role can access MissionObjectives during Pre-Deployment
+2025-09-16 00:57:33 - mission_phase_policy - INFO - Test result: ❌ DENIED - Only Commander role can access MissionObjectives during Pre-Deployment
+2025-09-16 00:57:33 - mission_phase_policy - INFO - Running test: Commander accessing mission data during pre-deployment
+2025-09-16 00:57:33 - mission_phase_policy - INFO - Checking mission policy for user User123 (Role: commander, Phase: pre_deployment, Query: missiondata)
+2025-09-16 00:57:33 - mission_phase_policy - DEBUG - Searching graph with optimized query: mission phase policy pre_deployment commander
+2025-09-16 00:57:33 - mission_phase_policy - ERROR - Error during graph search: 'ascii' codec can't encode character '\u201d' in position 7: ordinal not in range(128)
+2025-09-16 00:57:33 - mission_phase_policy - INFO - Continuing with policy logic despite graph search error
+2025-09-16 00:57:33 - mission_phase_policy - DEBUG - Applying policy logic for commander in pre_deployment phase accessing missiondata
+2025-09-16 00:57:33 - mission_phase_policy - DEBUG - Applying Pre-Deployment phase policy
+2025-09-16 00:57:33 - mission_phase_policy - DEBUG - Checking Pre-Deployment policy for commander accessing missiondata
+2025-09-16 00:57:33 - mission_phase_policy - INFO - commander allowed to access MissionData during Pre-Deployment
+2025-09-16 00:57:33 - mission_phase_policy - INFO - Policy decision: True - Commander and Analyst can access MissionData during Pre-Deployment
+2025-09-16 00:57:33 - mission_phase_policy - INFO - Test result: ✅ ALLOWED - Commander and Analyst can access MissionData during Pre-Deployment
+2025-09-16 00:57:33 - mission_phase_policy - INFO - Running test: Operator trying to access mission data during pre-deployment
+2025-09-16 00:57:33 - mission_phase_policy - INFO - Checking mission policy for user User123 (Role: operator, Phase: pre_deployment, Query: missiondata)
+2025-09-16 00:57:33 - mission_phase_policy - DEBUG - Searching graph with optimized query: mission phase policy pre_deployment operator
+2025-09-16 00:57:33 - mission_phase_policy - ERROR - Error during graph search: 'ascii' codec can't encode character '\u201d' in position 7: ordinal not in range(128)
+2025-09-16 00:57:33 - mission_phase_policy - INFO - Continuing with policy logic despite graph search error
+2025-09-16 00:57:33 - mission_phase_policy - DEBUG - Applying policy logic for operator in pre_deployment phase accessing missiondata
+2025-09-16 00:57:33 - mission_phase_policy - DEBUG - Applying Pre-Deployment phase policy
+2025-09-16 00:57:33 - mission_phase_policy - DEBUG - Checking Pre-Deployment policy for operator accessing missiondata
+2025-09-16 00:57:33 - mission_phase_policy - INFO - operator denied access to MissionData during Pre-Deployment
+2025-09-16 00:57:33 - mission_phase_policy - INFO - Policy decision: False - Only Commander and Analyst can access MissionData during Pre-Deployment
+2025-09-16 00:57:33 - mission_phase_policy - INFO - Test result: ❌ DENIED - Only Commander and Analyst can access MissionData during Pre-Deployment
+2025-09-16 00:57:33 - mission_phase_policy - INFO - Running test: Commander accessing objectives during active mission
+2025-09-16 00:57:33 - mission_phase_policy - INFO - Checking mission policy for user User123 (Role: commander, Phase: active_mission, Query: missionobjectives)
+2025-09-16 00:57:33 - mission_phase_policy - DEBUG - Searching graph with optimized query: mission phase policy active_mission commander
+2025-09-16 00:57:33 - mission_phase_policy - ERROR - Error during graph search: 'ascii' codec can't encode character '\u201d' in position 7: ordinal not in range(128)
+2025-09-16 00:57:33 - mission_phase_policy - INFO - Continuing with policy logic despite graph search error
+2025-09-16 00:57:33 - mission_phase_policy - DEBUG - Applying policy logic for commander in active_mission phase accessing missionobjectives
+2025-09-16 00:57:33 - mission_phase_policy - INFO - Commander override detected for MissionObjectives
+2025-09-16 00:57:33 - mission_phase_policy - INFO - Policy decision: True - Commander role has override permissions for MissionObjectives
+2025-09-16 00:57:33 - mission_phase_policy - INFO - Test result: ✅ ALLOWED - Commander role has override permissions for MissionObjectives
+2025-09-16 00:57:33 - mission_phase_policy - INFO - Running test: Analyst accessing objectives during active mission
+2025-09-16 00:57:33 - mission_phase_policy - INFO - Checking mission policy for user User123 (Role: analyst, Phase: active_mission, Query: missionobjectives)
+2025-09-16 00:57:33 - mission_phase_policy - DEBUG - Searching graph with optimized query: mission phase policy active_mission analyst
+2025-09-16 00:57:33 - mission_phase_policy - ERROR - Error during graph search: 'ascii' codec can't encode character '\u201d' in position 7: ordinal not in range(128)
+2025-09-16 00:57:33 - mission_phase_policy - INFO - Continuing with policy logic despite graph search error
+2025-09-16 00:57:33 - mission_phase_policy - DEBUG - Applying policy logic for analyst in active_mission phase accessing missionobjectives
+2025-09-16 00:57:33 - mission_phase_policy - DEBUG - Applying Active Mission phase policy
+2025-09-16 00:57:33 - mission_phase_policy - DEBUG - Checking Active Mission policy for analyst accessing missionobjectives
+2025-09-16 00:57:33 - mission_phase_policy - INFO - analyst allowed to access MissionObjectives during Active Mission
+2025-09-16 00:57:33 - mission_phase_policy - INFO - Policy decision: True - Authorized personnel can access MissionObjectives during Active Mission
+2025-09-16 00:57:33 - mission_phase_policy - INFO - Test result: ✅ ALLOWED - Authorized personnel can access MissionObjectives during Active Mission
+2025-09-16 00:57:33 - mission_phase_policy - INFO - Running test: Operator accessing objectives during active mission
+2025-09-16 00:57:33 - mission_phase_policy - INFO - Checking mission policy for user User123 (Role: operator, Phase: active_mission, Query: missionobjectives)
+2025-09-16 00:57:33 - mission_phase_policy - DEBUG - Searching graph with optimized query: mission phase policy active_mission operator
+2025-09-16 00:57:33 - mission_phase_policy - ERROR - Error during graph search: 'ascii' codec can't encode character '\u201d' in position 7: ordinal not in range(128)
+2025-09-16 00:57:33 - mission_phase_policy - INFO - Continuing with policy logic despite graph search error
+2025-09-16 00:57:33 - mission_phase_policy - DEBUG - Applying policy logic for operator in active_mission phase accessing missionobjectives
+2025-09-16 00:57:33 - mission_phase_policy - DEBUG - Applying Active Mission phase policy
+2025-09-16 00:57:33 - mission_phase_policy - DEBUG - Checking Active Mission policy for operator accessing missionobjectives
+2025-09-16 00:57:33 - mission_phase_policy - INFO - operator allowed to access MissionObjectives during Active Mission
+2025-09-16 00:57:33 - mission_phase_policy - INFO - Policy decision: True - Authorized personnel can access MissionObjectives during Active Mission
+2025-09-16 00:57:33 - mission_phase_policy - INFO - Test result: ✅ ALLOWED - Authorized personnel can access MissionObjectives during Active Mission
+2025-09-16 00:57:33 - mission_phase_policy - INFO - Running test: Observer trying to access objectives during active mission
+2025-09-16 00:57:33 - mission_phase_policy - INFO - Checking mission policy for user User123 (Role: observer, Phase: active_mission, Query: missionobjectives)
+2025-09-16 00:57:33 - mission_phase_policy - DEBUG - Searching graph with optimized query: mission phase policy active_mission observer
+2025-09-16 00:57:33 - mission_phase_policy - ERROR - Error during graph search: 'ascii' codec can't encode character '\u201d' in position 7: ordinal not in range(128)
+2025-09-16 00:57:33 - mission_phase_policy - INFO - Continuing with policy logic despite graph search error
+2025-09-16 00:57:33 - mission_phase_policy - DEBUG - Applying policy logic for observer in active_mission phase accessing missionobjectives
+2025-09-16 00:57:33 - mission_phase_policy - DEBUG - Applying Active Mission phase policy
+2025-09-16 00:57:33 - mission_phase_policy - DEBUG - Checking Active Mission policy for observer accessing missionobjectives
+2025-09-16 00:57:33 - mission_phase_policy - INFO - observer denied access to MissionObjectives during Active Mission
+2025-09-16 00:57:33 - mission_phase_policy - INFO - Policy decision: False - Observer role cannot access MissionObjectives during Active Mission
+2025-09-16 00:57:33 - mission_phase_policy - INFO - Test result: ❌ DENIED - Observer role cannot access MissionObjectives during Active Mission
+2025-09-16 00:57:33 - mission_phase_policy - INFO - Running test: Analyst accessing detailed data for analysis
+2025-09-16 00:57:33 - mission_phase_policy - INFO - Checking mission policy for user User123 (Role: analyst, Phase: post_mission, Query: missiondata)
+2025-09-16 00:57:33 - mission_phase_policy - DEBUG - Searching graph with optimized query: mission phase policy post_mission analyst
+2025-09-16 00:57:33 - mission_phase_policy - ERROR - Error during graph search: 'ascii' codec can't encode character '\u201d' in position 7: ordinal not in range(128)
+2025-09-16 00:57:33 - mission_phase_policy - INFO - Continuing with policy logic despite graph search error
+2025-09-16 00:57:33 - mission_phase_policy - DEBUG - Applying policy logic for analyst in post_mission phase accessing missiondata
+2025-09-16 00:57:33 - mission_phase_policy - DEBUG - Applying Post Mission phase policy
+2025-09-16 00:57:33 - mission_phase_policy - DEBUG - Checking Post Mission policy for analyst accessing missiondata
+2025-09-16 00:57:33 - mission_phase_policy - INFO - analyst allowed to access MissionData during Post Mission
+2025-09-16 00:57:33 - mission_phase_policy - INFO - Policy decision: True - Only Analyst can access detailed MissionData during Post Mission
+2025-09-16 00:57:33 - mission_phase_policy - INFO - Test result: ✅ ALLOWED - Only Analyst can access detailed MissionData during Post Mission
+2025-09-16 00:57:33 - mission_phase_policy - INFO - Running test: Commander trying to access detailed data during post-mission
+2025-09-16 00:57:33 - mission_phase_policy - INFO - Checking mission policy for user User123 (Role: commander, Phase: post_mission, Query: missiondata)
+2025-09-16 00:57:33 - mission_phase_policy - DEBUG - Searching graph with optimized query: mission phase policy post_mission commander
+2025-09-16 00:57:33 - mission_phase_policy - ERROR - Error during graph search: 'ascii' codec can't encode character '\u201d' in position 7: ordinal not in range(128)
+2025-09-16 00:57:33 - mission_phase_policy - INFO - Continuing with policy logic despite graph search error
+2025-09-16 00:57:33 - mission_phase_policy - DEBUG - Applying policy logic for commander in post_mission phase accessing missiondata
+2025-09-16 00:57:33 - mission_phase_policy - DEBUG - Applying Post Mission phase policy
+2025-09-16 00:57:33 - mission_phase_policy - DEBUG - Checking Post Mission policy for commander accessing missiondata
+2025-09-16 00:57:33 - mission_phase_policy - INFO - commander denied access to MissionData during Post Mission
+2025-09-16 00:57:33 - mission_phase_policy - INFO - Policy decision: False - Only Analyst role can access detailed MissionData during Post Mission
+2025-09-16 00:57:33 - mission_phase_policy - INFO - Test result: ❌ DENIED - Only Analyst role can access detailed MissionData during Post Mission
+2025-09-16 00:57:33 - mission_phase_policy - INFO - Running test: Analyst accessing objectives post-mission
+2025-09-16 00:57:33 - mission_phase_policy - INFO - Checking mission policy for user User123 (Role: analyst, Phase: post_mission, Query: missionobjectives)
+2025-09-16 00:57:33 - mission_phase_policy - DEBUG - Searching graph with optimized query: mission phase policy post_mission analyst
+2025-09-16 00:57:33 - mission_phase_policy - ERROR - Error during graph search: 'ascii' codec can't encode character '\u201d' in position 7: ordinal not in range(128)
+2025-09-16 00:57:33 - mission_phase_policy - INFO - Continuing with policy logic despite graph search error
+2025-09-16 00:57:33 - mission_phase_policy - DEBUG - Applying policy logic for analyst in post_mission phase accessing missionobjectives
+2025-09-16 00:57:33 - mission_phase_policy - DEBUG - Applying Post Mission phase policy
+2025-09-16 00:57:33 - mission_phase_policy - DEBUG - Checking Post Mission policy for analyst accessing missionobjectives
+2025-09-16 00:57:33 - mission_phase_policy - INFO - analyst allowed to access missionobjectives during Post Mission
+2025-09-16 00:57:33 - mission_phase_policy - INFO - Policy decision: True - MissionObjectives and OperationalStatus are accessible to all roles during Post Mission
+2025-09-16 00:57:33 - mission_phase_policy - INFO - Test result: ✅ ALLOWED - MissionObjectives and OperationalStatus are accessible to all roles during Post Mission
+2025-09-16 00:57:33 - mission_phase_policy - INFO - Running test: Observer accessing emergency protocols during emergency
+2025-09-16 00:57:33 - mission_phase_policy - INFO - Checking mission policy for user User123 (Role: observer, Phase: emergency, Query: emergencyprotocols)
+2025-09-16 00:57:33 - mission_phase_policy - DEBUG - Searching graph with optimized query: mission phase policy emergency observer
+2025-09-16 00:57:33 - mission_phase_policy - ERROR - Error during graph search: 'ascii' codec can't encode character '\u201d' in position 7: ordinal not in range(128)
+2025-09-16 00:57:33 - mission_phase_policy - INFO - Continuing with policy logic despite graph search error
+2025-09-16 00:57:33 - mission_phase_policy - DEBUG - Applying policy logic for observer in emergency phase accessing emergencyprotocols
+2025-09-16 00:57:33 - mission_phase_policy - INFO - Emergency protocols detected - allowing access
+2025-09-16 00:57:33 - mission_phase_policy - INFO - Policy decision: True - Emergency protocols are always accessible for safety
+2025-09-16 00:57:33 - mission_phase_policy - INFO - Test result: ✅ ALLOWED - Emergency protocols are always accessible for safety
+2025-09-16 00:57:33 - mission_phase_policy - INFO - Running test: Operator accessing objectives during emergency
+2025-09-16 00:57:33 - mission_phase_policy - INFO - Checking mission policy for user User123 (Role: operator, Phase: emergency, Query: missionobjectives)
+2025-09-16 00:57:33 - mission_phase_policy - DEBUG - Searching graph with optimized query: mission phase policy emergency operator
+2025-09-16 00:57:33 - mission_phase_policy - ERROR - Error during graph search: 'ascii' codec can't encode character '\u201d' in position 7: ordinal not in range(128)
+2025-09-16 00:57:33 - mission_phase_policy - INFO - Continuing with policy logic despite graph search error
+2025-09-16 00:57:33 - mission_phase_policy - DEBUG - Applying policy logic for operator in emergency phase accessing missionobjectives
+2025-09-16 00:57:33 - mission_phase_policy - DEBUG - Applying Emergency phase policy
+2025-09-16 00:57:33 - mission_phase_policy - INFO - Emergency phase detected - allowing operator access to missionobjectives
+2025-09-16 00:57:33 - mission_phase_policy - INFO - Policy decision: True - Emergency phase allows access to all information for safety
+2025-09-16 00:57:33 - mission_phase_policy - INFO - Test result: ✅ ALLOWED - Emergency phase allows access to all information for safety
+2025-09-16 00:57:33 - mission_phase_policy - INFO - Running original scenario test...
+2025-09-16 00:57:33 - mission_phase_policy - INFO - Checking mission policy for user User123 (Role: commander, Phase: pre_deployment, Query: missionobjectives)
+2025-09-16 00:57:33 - mission_phase_policy - DEBUG - Searching graph with optimized query: mission phase policy pre_deployment commander
+2025-09-16 00:57:33 - mission_phase_policy - ERROR - Error during graph search: 'ascii' codec can't encode character '\u201d' in position 7: ordinal not in range(128)
+2025-09-16 00:57:33 - mission_phase_policy - INFO - Continuing with policy logic despite graph search error
+2025-09-16 00:57:33 - mission_phase_policy - DEBUG - Applying policy logic for commander in pre_deployment phase accessing missionobjectives
+2025-09-16 00:57:33 - mission_phase_policy - INFO - Commander override detected for MissionObjectives
+2025-09-16 00:57:33 - mission_phase_policy - INFO - Policy decision: True - Commander role has override permissions for MissionObjectives
+2025-09-16 00:57:33 - mission_phase_policy - INFO - Original scenario result: ✅ ALLOWED - Commander role has override permissions for MissionObjectives
+2025-09-16 00:57:33 - mission_phase_policy - INFO - Mission Phase Policy demonstration completed successfully
+2025-09-16 00:57:33 - mission_phase_policy - INFO - Closing Graphiti connection...
+2025-09-16 00:57:33 - mission_phase_policy - INFO - Graphiti connection closed successfully
+2025-09-16 00:57:33 - mission_phase_policy - INFO - Mission Phase Policy demonstration finished

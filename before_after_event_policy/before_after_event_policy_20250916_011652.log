@@ -1,0 +1,124 @@
+2025-09-16 01:16:52 - before_after_event_policy - INFO - Starting Before/After Event Policy demonstration
+2025-09-16 01:16:52 - before_after_event_policy - INFO - Initializing Graphiti...
+2025-09-16 01:16:52 - before_after_event_policy - INFO - Connecting to Neo4j at bolt://localhost:7687 with user neo4j
+2025-09-16 01:16:52 - before_after_event_policy - DEBUG - Initializing Groq LLM client
+2025-09-16 01:16:53 - before_after_event_policy - DEBUG - Groq LLM client initialized successfully
+2025-09-16 01:16:53 - before_after_event_policy - DEBUG - Initializing Graphiti instance
+2025-09-16 01:16:54 - before_after_event_policy - INFO - Graphiti instance created successfully
+2025-09-16 01:16:54 - before_after_event_policy - INFO - Building indices and constraints...
+2025-09-16 01:16:55 - before_after_event_policy - INFO - Indices and constraints built successfully
+2025-09-16 01:16:55 - before_after_event_policy - INFO - Loading policy configuration...
+2025-09-16 01:16:55 - before_after_event_policy - INFO - Policy configuration loaded successfully
+2025-09-16 01:16:55 - before_after_event_policy - INFO - BeforeAfterEventPolicy instance created successfully
+2025-09-16 01:16:55 - before_after_event_policy - INFO - Adding policies to knowledge graph...
+2025-09-16 01:16:55 - before_after_event_policy - INFO - Starting to add before/after event policies to knowledge graph...
+2025-09-16 01:16:55 - before_after_event_policy - WARNING - Skipping potentially problematic policy: System status must be blocked during maintenance w...
+2025-09-16 01:16:55 - before_after_event_policy - WARNING - Skipping potentially problematic policy: Blocking is enforced based on current time vs even...
+2025-09-16 01:16:55 - before_after_event_policy - DEBUG - Preparing to add 10 text policies to graph
+2025-09-16 01:16:55 - before_after_event_policy - DEBUG - Adding text policy 1/10
+2025-09-16 01:16:57 - before_after_event_policy - ERROR - Failed to add text policy 1: 'ascii' codec can't encode character '\u201d' in position 7: ordinal not in range(128)
+2025-09-16 01:16:57 - before_after_event_policy - DEBUG - Adding text policy 2/10
+2025-09-16 01:16:58 - before_after_event_policy - ERROR - Failed to add text policy 2: 'ascii' codec can't encode character '\u201d' in position 7: ordinal not in range(128)
+2025-09-16 01:16:58 - before_after_event_policy - DEBUG - Adding text policy 3/10
+2025-09-16 01:16:59 - before_after_event_policy - ERROR - Failed to add text policy 3: 'ascii' codec can't encode character '\u201d' in position 7: ordinal not in range(128)
+2025-09-16 01:16:59 - before_after_event_policy - DEBUG - Adding text policy 4/10
+2025-09-16 01:17:00 - before_after_event_policy - ERROR - Failed to add text policy 4: 'ascii' codec can't encode character '\u201d' in position 7: ordinal not in range(128)
+2025-09-16 01:17:00 - before_after_event_policy - DEBUG - Adding text policy 5/10
+2025-09-16 01:17:00 - before_after_event_policy - ERROR - Failed to add text policy 5: 'ascii' codec can't encode character '\u201d' in position 7: ordinal not in range(128)
+2025-09-16 01:17:00 - before_after_event_policy - DEBUG - Adding text policy 6/10
+2025-09-16 01:17:01 - before_after_event_policy - ERROR - Failed to add text policy 6: 'ascii' codec can't encode character '\u201d' in position 7: ordinal not in range(128)
+2025-09-16 01:17:01 - before_after_event_policy - DEBUG - Adding text policy 7/10
+2025-09-16 01:17:02 - before_after_event_policy - ERROR - Failed to add text policy 7: 'ascii' codec can't encode character '\u201d' in position 7: ordinal not in range(128)
+2025-09-16 01:17:02 - before_after_event_policy - DEBUG - Adding text policy 8/10
+2025-09-16 01:17:03 - before_after_event_policy - ERROR - Failed to add text policy 8: 'ascii' codec can't encode character '\u201d' in position 7: ordinal not in range(128)
+2025-09-16 01:17:03 - before_after_event_policy - DEBUG - Adding text policy 9/10
+2025-09-16 01:17:03 - before_after_event_policy - ERROR - Failed to add text policy 9: 'ascii' codec can't encode character '\u201d' in position 7: ordinal not in range(128)
+2025-09-16 01:17:03 - before_after_event_policy - DEBUG - Adding text policy 10/10
+2025-09-16 01:17:04 - before_after_event_policy - ERROR - Failed to add text policy 10: 'ascii' codec can't encode character '\u201d' in position 7: ordinal not in range(128)
+2025-09-16 01:17:04 - before_after_event_policy - INFO - Successfully added before/after event policies to knowledge graph
+2025-09-16 01:17:04 - before_after_event_policy - INFO - Starting policy tests...
+2025-09-16 01:17:04 - before_after_event_policy - INFO - Running test: Query before launch event - should be blocked
+2025-09-16 01:17:04 - before_after_event_policy - INFO - Checking before/after event policy for query at 2025-06-30 10:00:00+00:00
+2025-09-16 01:17:04 - before_after_event_policy - DEBUG - Detected 1 potentially blocked content in query
+2025-09-16 01:17:04 - before_after_event_policy - INFO - Content blocked: 2025-06-30 10:00:00+00:00 < 2025-07-01 12:00:00+00:00
+2025-09-16 01:17:04 - before_after_event_policy - DEBUG - Searching graph with optimized query: before after event policy time-based blocking
+2025-09-16 01:17:04 - before_after_event_policy - ERROR - Error during graph search: 'ascii' codec can't encode character '\u201d' in position 7: ordinal not in range(128)
+2025-09-16 01:17:04 - before_after_event_policy - INFO - Continuing with policy logic despite graph search error
+2025-09-16 01:17:04 - before_after_event_policy - INFO - Query blocked due to: Launch Plan
+2025-09-16 01:17:04 - before_after_event_policy - INFO - Test result: Blocked - Launch plans are not available before the scheduled launch.
+2025-09-16 01:17:04 - before_after_event_policy - INFO - Running test: Query after launch event - should be allowed
+2025-09-16 01:17:04 - before_after_event_policy - INFO - Checking before/after event policy for query at 2025-07-02 10:00:00+00:00
+2025-09-16 01:17:04 - before_after_event_policy - DEBUG - Detected 1 potentially blocked content in query
+2025-09-16 01:17:04 - before_after_event_policy - INFO - Content allowed: 2025-07-02 10:00:00+00:00 >= 2025-07-01 12:00:00+00:00
+2025-09-16 01:17:04 - before_after_event_policy - DEBUG - Searching graph with optimized query: before after event policy time-based blocking
+2025-09-16 01:17:04 - before_after_event_policy - ERROR - Error during graph search: 'ascii' codec can't encode character '\u201d' in position 7: ordinal not in range(128)
+2025-09-16 01:17:04 - before_after_event_policy - INFO - Continuing with policy logic despite graph search error
+2025-09-16 01:17:04 - before_after_event_policy - INFO - No content blocked - all detected content is allowed
+2025-09-16 01:17:04 - before_after_event_policy - INFO - Test result: Allowed - All detected content is allowed at current time
+2025-09-16 01:17:04 - before_after_event_policy - INFO - Running test: Query before data release - should be blocked
+2025-09-16 01:17:04 - before_after_event_policy - INFO - Checking before/after event policy for query at 2025-07-14 10:00:00+00:00
+2025-09-16 01:17:04 - before_after_event_policy - DEBUG - Detected 1 potentially blocked content in query
+2025-09-16 01:17:04 - before_after_event_policy - INFO - Content blocked: 2025-07-14 10:00:00+00:00 < 2025-07-15 09:00:00+00:00
+2025-09-16 01:17:04 - before_after_event_policy - DEBUG - Searching graph with optimized query: before after event policy time-based blocking
+2025-09-16 01:17:04 - before_after_event_policy - ERROR - Error during graph search: 'ascii' codec can't encode character '\u201d' in position 7: ordinal not in range(128)
+2025-09-16 01:17:04 - before_after_event_policy - INFO - Continuing with policy logic despite graph search error
+2025-09-16 01:17:04 - before_after_event_policy - INFO - Query blocked due to: Mission Data
+2025-09-16 01:17:04 - before_after_event_policy - INFO - Test result: Blocked - Mission data is not available before the scheduled release date.
+2025-09-16 01:17:04 - before_after_event_policy - INFO - Running test: Query after data release - should be allowed
+2025-09-16 01:17:04 - before_after_event_policy - INFO - Checking before/after event policy for query at 2025-07-16 10:00:00+00:00
+2025-09-16 01:17:04 - before_after_event_policy - DEBUG - Detected 1 potentially blocked content in query
+2025-09-16 01:17:04 - before_after_event_policy - INFO - Content allowed: 2025-07-16 10:00:00+00:00 >= 2025-07-15 09:00:00+00:00
+2025-09-16 01:17:04 - before_after_event_policy - DEBUG - Searching graph with optimized query: before after event policy time-based blocking
+2025-09-16 01:17:04 - before_after_event_policy - ERROR - Error during graph search: 'ascii' codec can't encode character '\u201d' in position 7: ordinal not in range(128)
+2025-09-16 01:17:04 - before_after_event_policy - INFO - Continuing with policy logic despite graph search error
+2025-09-16 01:17:04 - before_after_event_policy - INFO - No content blocked - all detected content is allowed
+2025-09-16 01:17:04 - before_after_event_policy - INFO - Test result: Allowed - All detected content is allowed at current time
+2025-09-16 01:17:04 - before_after_event_policy - INFO - Running test: Query during maintenance - should be blocked
+2025-09-16 01:17:04 - before_after_event_policy - INFO - Checking before/after event policy for query at 2025-06-24 10:00:00+00:00
+2025-09-16 01:17:04 - before_after_event_policy - DEBUG - Detected 1 potentially blocked content in query
+2025-09-16 01:17:04 - before_after_event_policy - INFO - Content blocked: 2025-06-24 10:00:00+00:00 < 2025-06-25 02:00:00+00:00
+2025-09-16 01:17:04 - before_after_event_policy - DEBUG - Searching graph with optimized query: before after event policy time-based blocking
+2025-09-16 01:17:04 - before_after_event_policy - ERROR - Error during graph search: 'ascii' codec can't encode character '\u201d' in position 7: ordinal not in range(128)
+2025-09-16 01:17:04 - before_after_event_policy - INFO - Continuing with policy logic despite graph search error
+2025-09-16 01:17:04 - before_after_event_policy - INFO - Query blocked due to: System Status
+2025-09-16 01:17:04 - before_after_event_policy - INFO - Test result: Blocked - System status information is not available during maintenance.
+2025-09-16 01:17:04 - before_after_event_policy - INFO - Running test: Query after maintenance - should be allowed
+2025-09-16 01:17:04 - before_after_event_policy - INFO - Checking before/after event policy for query at 2025-06-26 10:00:00+00:00
+2025-09-16 01:17:04 - before_after_event_policy - DEBUG - Detected 1 potentially blocked content in query
+2025-09-16 01:17:04 - before_after_event_policy - INFO - Content allowed: 2025-06-26 10:00:00+00:00 >= 2025-06-25 02:00:00+00:00
+2025-09-16 01:17:04 - before_after_event_policy - DEBUG - Searching graph with optimized query: before after event policy time-based blocking
+2025-09-16 01:17:04 - before_after_event_policy - ERROR - Error during graph search: 'ascii' codec can't encode character '\u201d' in position 7: ordinal not in range(128)
+2025-09-16 01:17:04 - before_after_event_policy - INFO - Continuing with policy logic despite graph search error
+2025-09-16 01:17:04 - before_after_event_policy - INFO - No content blocked - all detected content is allowed
+2025-09-16 01:17:04 - before_after_event_policy - INFO - Test result: Allowed - All detected content is allowed at current time
+2025-09-16 01:17:04 - before_after_event_policy - INFO - Running test: Query before security audit - should be blocked
+2025-09-16 01:17:04 - before_after_event_policy - INFO - Checking before/after event policy for query at 2025-07-09 10:00:00+00:00
+2025-09-16 01:17:04 - before_after_event_policy - DEBUG - Detected 1 potentially blocked content in query
+2025-09-16 01:17:04 - before_after_event_policy - INFO - Content blocked: 2025-07-09 10:00:00+00:00 < 2025-07-10 16:00:00+00:00
+2025-09-16 01:17:04 - before_after_event_policy - DEBUG - Searching graph with optimized query: before after event policy time-based blocking
+2025-09-16 01:17:04 - before_after_event_policy - ERROR - Error during graph search: 'ascii' codec can't encode character '\u201d' in position 7: ordinal not in range(128)
+2025-09-16 01:17:04 - before_after_event_policy - INFO - Continuing with policy logic despite graph search error
+2025-09-16 01:17:04 - before_after_event_policy - INFO - Query blocked due to: Security Report
+2025-09-16 01:17:04 - before_after_event_policy - INFO - Test result: Blocked - Security reports are not available before audit completion.
+2025-09-16 01:17:04 - before_after_event_policy - INFO - Running test: Query after security audit - should be allowed
+2025-09-16 01:17:04 - before_after_event_policy - INFO - Checking before/after event policy for query at 2025-07-11 10:00:00+00:00
+2025-09-16 01:17:04 - before_after_event_policy - DEBUG - Detected 1 potentially blocked content in query
+2025-09-16 01:17:04 - before_after_event_policy - INFO - Content allowed: 2025-07-11 10:00:00+00:00 >= 2025-07-10 16:00:00+00:00
+2025-09-16 01:17:04 - before_after_event_policy - DEBUG - Searching graph with optimized query: before after event policy time-based blocking
+2025-09-16 01:17:04 - before_after_event_policy - ERROR - Error during graph search: 'ascii' codec can't encode character '\u201d' in position 7: ordinal not in range(128)
+2025-09-16 01:17:04 - before_after_event_policy - INFO - Continuing with policy logic despite graph search error
+2025-09-16 01:17:04 - before_after_event_policy - INFO - No content blocked - all detected content is allowed
+2025-09-16 01:17:04 - before_after_event_policy - INFO - Test result: Allowed - All detected content is allowed at current time
+2025-09-16 01:17:04 - before_after_event_policy - INFO - Running original scenario test...
+2025-09-16 01:17:04 - before_after_event_policy - INFO - Checking before/after event policy for query at 2025-06-30 10:00:00+00:00
+2025-09-16 01:17:04 - before_after_event_policy - DEBUG - Detected 1 potentially blocked content in query
+2025-09-16 01:17:04 - before_after_event_policy - INFO - Content blocked: 2025-06-30 10:00:00+00:00 < 2025-07-01 12:00:00+00:00
+2025-09-16 01:17:04 - before_after_event_policy - DEBUG - Searching graph with optimized query: before after event policy time-based blocking
+2025-09-16 01:17:04 - before_after_event_policy - ERROR - Error during graph search: 'ascii' codec can't encode character '\u201d' in position 7: ordinal not in range(128)
+2025-09-16 01:17:04 - before_after_event_policy - INFO - Continuing with policy logic despite graph search error
+2025-09-16 01:17:04 - before_after_event_policy - INFO - Query blocked due to: Launch Plan
+2025-09-16 01:17:04 - before_after_event_policy - INFO - Original scenario result: Blocked - Launch plans are not available before the scheduled launch.
+2025-09-16 01:17:04 - before_after_event_policy - INFO - Before/After Event Policy demonstration completed successfully
+2025-09-16 01:17:04 - before_after_event_policy - INFO - Closing Graphiti connection...
+2025-09-16 01:17:04 - before_after_event_policy - INFO - Graphiti connection closed successfully
+2025-09-16 01:17:04 - before_after_event_policy - INFO - Before/After Event Policy demonstration finished
