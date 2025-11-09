@@ -1,0 +1,18 @@
+INFO:     Started server process [40783]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8002 (Press CTRL+C to quit)
+✅ Graphiti core imported successfully
+🔧 Initializing Privacy Bridge...
+✅ Base privacy ontology created
+✅ Groq LLM initialized with llama3-70b-8192
+   Using Llama for privacy decision intelligence
+✅ Graphiti initialized at bolt://localhost:7687
+   Using Groq Llama 3 70B via OpenAI-compatible API
+   Base URL: https://api.groq.com/openai/v1
+   API Key: gsk_IjKpHNftnWChNMUm...
+⚠️  Groq decision error: Groq API error: Client error '400 Bad Request' for url 'https://api.groq.com/openai/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400
+⚠️  Groq classification error: Groq API error: Client error '400 Bad Request' for url 'https://api.groq.com/openai/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400
+INFO:     127.0.0.1:55108 - "POST /api/v1/privacy-decision HTTP/1.1" 200 OK
