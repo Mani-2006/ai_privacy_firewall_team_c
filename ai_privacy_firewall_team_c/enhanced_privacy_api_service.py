@@ -326,15 +326,16 @@ async def enhanced_privacy_decision(request: EnhancedPrivacyDecisionRequest):
         )
         audit_trail.append(f"Final integrated decision: {final_decision['decision']}")
         
-        # Store decision
-        privacy_bridge.create_privacy_decision_episode(
-            requester_role=request.requester_role,
-            data_entity=request.data_field,
-            context=request.context,
-            decision=final_decision["decision"],
-            reasoning=final_decision["reasoning"],
-            confidence=final_decision["confidence"]
-        )
+        # Store decision in Graphiti knowledge graph
+        await privacy_bridge.create_privacy_decision_episode({
+            "requester": request.requester_role,
+            "data_field": request.data_field,
+            "purpose": request.context,
+            "context": request.organizational_context or request.context,
+            "emergency": final_decision.get("emergency_override", False),
+            "temporal_analysis": temporal_analysis,
+            "organizational_analysis": None  # Team B integration pending
+        })
         
         return IntegratedDecisionResponse(
             decision=final_decision["decision"],
@@ -479,7 +480,16 @@ def _analyze_temporal_context(
             window_type="emergency" if temporal_context.urgency_level == "critical" else "access_window"
         )
         
-        # Create enhanced tuple
+        # Create enhanced tuple in Team A's 6-tuple format
+        # Map urgency levels to Team A's fields
+        is_emergency = temporal_context.urgency_level in ["high", "critical"]
+        temporal_role_mapping = {
+            "low": "user",
+            "normal": "user", 
+            "high": "oncall_high",
+            "critical": "oncall_critical"
+        }
+        
         enhanced_tuple = EnhancedContextualIntegrityTuple(
             data_subject=data_field,
             data_sender="system",
@@ -488,8 +498,11 @@ def _analyze_temporal_context(
             transmission_principle=temporal_context.transmission_principle or "secure",
             temporal_context=TemporalContext(
                 situation=temporal_context.situation,
-                urgency_level=temporal_context.urgency_level,
-                time_window=time_window
+                emergency_override=is_emergency or temporal_context.emergency_override_requested,
+                temporal_role=temporal_role_mapping.get(temporal_context.urgency_level, "user"),
+                access_window=time_window,
+                timestamp=temporal_context.time_window_start or datetime.now(timezone.utc),
+                timezone="UTC"
             )
         )
         
