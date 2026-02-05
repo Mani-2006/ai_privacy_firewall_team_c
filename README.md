@@ -1,5 +1,4 @@
-# AI Privacy Firewall - Team C (Ontology Integration)
-Internship Work Summary – AI Privacy Firewall (Team C)
+# Internship Work Summary – AI Privacy Firewall (Team C)
 
 During Phase 1 of the internship (LLM Security), I worked as part of Team C, focusing on the design, implementation, and validation of a multi-team AI privacy firewall system integrated with the Graphiti framework.
 
@@ -129,5 +128,3 @@ Graph databases (Neo4j)
 Multi-agent decision systems
 
 Secure system design principles
-
-This work directly shaped my interest in computer networks, security, and information systems, motivating my decision to pursue CCNA certification and advanced studies.
